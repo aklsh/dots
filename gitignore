@@ -1,0 +1,72 @@
+# ===================================================
+#
+#   File: .gitignore
+#   Author: Akilesh Kannan
+#   Contact: akileshkannan@gmail.com
+#   Web: https://aklsh.github.io
+#
+# ===================================================
+
+# General
+.DS_Store
+Desktop.ini
+.AppleDouble
+.LSOverride
+
+
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+GSYMS
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
+# Thumbnails
+._*
+Thumbs.db
+Icon
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# Compiled C++ files
+*.out
+*.o
+
+# Application specific files
+venv
+node_modules
+.sass-cache
+
+# Vim-specific
+*.swp
+*.swo
+*~
+.vim-template*
