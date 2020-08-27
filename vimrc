@@ -102,10 +102,8 @@ Plug 'vhda/verilog_systemverilog.vim'
 "===============
 " File Explorer
 "===============
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 
 "==============
 " Fuzzy finder
@@ -246,7 +244,7 @@ let g:airline_theme = "base16_nord"                                     " Airlin
 "==================================
 " jistr/vim-nerdtree-tabs settings
 "==================================
-nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <silent> <F7> <cmd>CHADopen --nofocus<CR>
 let g:nerdtree_tabs_open_on_gui_startup = 0                             " To have NERDTree NOT open on startup
 
 "=============================
