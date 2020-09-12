@@ -137,6 +137,7 @@ Plug 'aperezdc/vim-template'
 Plug 'chrisbra/csv.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
+Plug 'direnv/direnv.vim'
 
 "========
 " Themes
@@ -244,7 +245,7 @@ let g:airline_theme = "base16_nord"                                     " Airlin
 "==================================
 " jistr/vim-nerdtree-tabs settings
 "==================================
-nmap <silent> <F7> <cmd>CHADopen --nofocus<CR>
+nmap <silent> <F7> :CHADopen<CR>
 let g:nerdtree_tabs_open_on_gui_startup = 0                             " To have NERDTree NOT open on startup
 
 "=============================
