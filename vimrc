@@ -87,16 +87,16 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vuciv/vim-bujo'
 
-"====================
+
+"========================
 " Out-of-the-World plugs
-"====================
+"========================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mbbill/undotree'
 
 "===================
 " Language-Specific
 "===================
-Plug 'lervag/vimtex'
 Plug 'vhda/verilog_systemverilog.vim'
 
 "===============
@@ -129,12 +129,9 @@ Plug 'tpope/vim-liquid'
 " Miscellaneous plugins
 "=========================
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 Plug 'digitaltoad/vim-jade'
 Plug 'aperezdc/vim-template'
-Plug 'chrisbra/csv.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
 Plug 'direnv/direnv.vim'
@@ -183,10 +180,12 @@ set timeout timeoutlen=1000 ttimeoutlen=50                              " timeou
 set laststatus=2                                                        " always show status bar
 set switchbuf=useopen                                                   " use existing buffer when opening file again
 set noswapfile                                                          " get rid of crap - who tf recovers a swp file?
-
+set exrc                                                                " use local vimrcs
+set secure                                                              " for local vimrc
 syntax on
 set background=dark                                                     " dark theme
 colorscheme nord                                                        " ultimate awesomeness
+set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
 
 set undofile                                                            " as many undo levels as possible
 set undolevels=1000
@@ -333,8 +332,6 @@ nnoremap <silent> <leader>SW :StripWhitespace!<CR>
 " mbbill/undotree settings
 "==========================
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
-
-let g:tex_flavor = 'latex'
 
 " Local Configs
 source ~/.vimrc.local
