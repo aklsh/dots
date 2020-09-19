@@ -34,7 +34,6 @@ cscope.po.out
 # Thumbnails
 ._*
 Thumbs.db
-Icon
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
@@ -70,3 +69,7 @@ node_modules
 *.swo
 *~
 .vim-template*
+
+# Direnv files
+.envrc
+.direnv
