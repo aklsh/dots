@@ -98,12 +98,13 @@ Plug 'mbbill/undotree'
 " Language-Specific
 "===================
 Plug 'vhda/verilog_systemverilog.vim'
+Plug 'sheerun/vim-polyglot'
 
 "===============
 " File Explorer
 "===============
 Plug 'ryanoasis/vim-devicons'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+Plug 'preservim/nerdtree'
 
 "==============
 " Fuzzy finder
@@ -132,7 +133,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'digitaltoad/vim-jade'
 Plug 'aperezdc/vim-template'
-Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
 Plug 'direnv/direnv.vim'
 
@@ -158,6 +158,15 @@ set encoding=UTF-8                                                      " ummm..
 set noerrorbells                                                        " no sounds
 set showmode                                                            " always show which mode vim is in
 set backspace=indent,eol,start                                          " use <BS> as intended by intuition
+set nocompatible
+if (has("termguicolors"))                                               " Terminal colors
+  set termguicolors
+endif
+if has('unnamedplus')                                                   " Copy to/from system clipboard
+    set clipboard=unnamed,unnamedplus
+else
+    set clipboard=unnamed
+endif
 set ruler                                                               " show cursor co-ordinates
 set showcmd                                                             " show commands while being typed out
 set incsearch                                                           " show partial search hits
@@ -244,7 +253,7 @@ let g:airline_theme = "base16_nord"                                     " Airlin
 "==================================
 " jistr/vim-nerdtree-tabs settings
 "==================================
-nmap <silent> <F7> :CHADopen<CR>
+nmap <silent> <F7> :NERDTreeToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup = 0                             " To have NERDTree NOT open on startup
 
 "=============================
@@ -303,19 +312,6 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
-
-"================================
-" voldikss/vim-floaterm settings
-"================================
-let g:floaterm_height = 0.5
-let g:floaterm_width = 0.75
-
-"============================
-" junegunn/goyo.vim settings
-"============================
-let g:goyo_width = 120
-let g:goyo_height = 90
-let g:goyo_linenr = 1
 
 "============================
 " junegunn/fzf.vim settings
