@@ -108,4 +108,3 @@ eval "$(direnv hook zsh)"
 
 # Misc auto-appends
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env" # ghcup-env
