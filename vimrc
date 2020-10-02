@@ -59,6 +59,7 @@ nnoremap <silent> <leader>bn :bnext<CR>
 nnoremap <silent> <leader>bp :bprevious<CR>
 nnoremap <silent> <leader>bd :bdelete<CR>
 
+
 "
 "
 " ╔═══════════════════════════════════════════════════════════════════╗
@@ -98,6 +99,7 @@ Plug 'mbbill/undotree'
 " Language-Specific
 "===================
 Plug 'vhda/verilog_systemverilog.vim'
+let g:polyglot_disabled = ['v', 'vlang']
 Plug 'sheerun/vim-polyglot'
 
 "===============
@@ -183,7 +185,6 @@ set guicursor=n:blinkon0                                                " don't 
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
 set mouse=a                                                             " make mouse to be used in all modes
-set autoread                                                            " automatically update file if changed in another buffer
 set ttyfast                                                             " fast terminal
 set timeout timeoutlen=1000 ttimeoutlen=50                              " timeout for key-mappings
 set laststatus=2                                                        " always show status bar
@@ -204,6 +205,9 @@ set undodir=~/.vim/undodir
 hi clear SignColumn                                                     " put symbols in the sign column - gitgutter etc.
 autocmd TermOpen * setlocal nonu nornu                              " no linenumbers for terminals
 autocmd TermOpen * startinsert
+
+set autoread                                                            " automatically update file if changed in another buffer
+au FocusGained * :checktime
 
 "
 "
