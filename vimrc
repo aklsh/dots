@@ -133,7 +133,8 @@ Plug 'direnv/direnv.vim'
 "========
 " Themes
 "========
-Plug 'flazz/vim-colorschemes'
+Plug 'arcticicestudio/nord-vim'
+" Plug 'flazz/vim-colorschemes'
 
 "------------------------------------------------------------------------------
 call plug#end()
