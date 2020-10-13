@@ -69,6 +69,7 @@ nnoremap <silent> <leader>bd :bdelete<CR>
 " ╚═══════════════════════════════════════════════════════════════════╝
 "
 "
+
 call plug#begin('~/.vim/plugged')
 "--------------------------------------------------------------------
 
@@ -98,7 +99,6 @@ Plug 'mbbill/undotree'
 "===================
 " Language-Specific
 "===================
-Plug 'vhda/verilog_systemverilog.vim'
 let g:polyglot_disabled = ['v', 'vlang']
 Plug 'sheerun/vim-polyglot'
 
@@ -121,19 +121,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 
-"=======================
-" HTML and CSS specific
-"=======================
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'ap/vim-css-color'
-Plug 'tpope/vim-liquid'
-
 "=========================
 " Miscellaneous plugins
 "=========================
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Raimondi/delimitMate'
-Plug 'digitaltoad/vim-jade'
 Plug 'aperezdc/vim-template'
 Plug 'mhinz/vim-startify'
 Plug 'direnv/direnv.vim'
@@ -141,8 +133,7 @@ Plug 'direnv/direnv.vim'
 "========
 " Themes
 "========
-Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+Plug 'flazz/vim-colorschemes'
 
 "------------------------------------------------------------------------------
 call plug#end()
@@ -178,8 +169,8 @@ set shiftwidth=4                                                        " visual
 set expandtab                                                           " use <TAB> to insert a tab...
 set guioptions-=m                                                       " remove menu bar
 set guioptions-=T                                                       " remove toolbar
-set guioptions-=r                                                       " remove right-hand scroll bar
-set guioptions-=L                                                       " remove left-hand scroll bar
+" set guioptions-=r                                                       " remove right-hand scroll bar
+" set guioptions-=L                                                       " remove left-hand scroll bar
 set cursorline                                                          " highlight line in which cursor is on
 set guicursor=n:blinkon0                                                " don't blink cursor in normal mode
 set nu rnu                                                              " show linenumbers relative to current line
@@ -203,8 +194,10 @@ set undoreload=10000
 set undodir=~/.vim/undodir
 
 hi clear SignColumn                                                     " put symbols in the sign column - gitgutter etc.
-autocmd TermOpen * setlocal nonu nornu                              " no linenumbers for terminals
+autocmd TermOpen * setlocal nonu nornu                                  " no linenumbers for terminals
 autocmd TermOpen * startinsert
+
+au BufWritePost .vimrc so ~/.vimrc                                      " automatically reload vimrc when it's saved
 
 set autoread                                                            " automatically update file if changed in another buffer
 au FocusGained * :checktime
@@ -289,6 +282,7 @@ let delimitMate_expand_cr = 1
 augroup mydelimitMate
   au!
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType verilog_systemverilog let b:delimitMate_quotes = "`"
   au FileType tex let b:delimitMate_quotes = ""
   au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
