@@ -28,8 +28,11 @@
 " Gotta be first
 set nocompatible
 filetype off
-
-
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
+endif
 "
 "
 " ╔═══════════════════════════════════════════════════════════════════╗
@@ -41,10 +44,8 @@ filetype off
 "
 nnoremap j gj
 nnoremap k gk
-nnoremap > <C-]>
-nnoremap < <C-T>
-nnoremap <leader>> <C-W><C-]>
-nnoremap <leader>< <C-W><C-T>
+nnoremap <leader>gl <C-W><C-]>
+nnoremap <leader>gh <C-W><C-T>
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
@@ -87,8 +88,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vuciv/vim-bujo'
-
 
 "========================
 " Out-of-the-World plugs
@@ -99,8 +98,7 @@ Plug 'mbbill/undotree'
 "===================
 " Language-Specific
 "===================
-let g:polyglot_disabled = ['v', 'vlang']
-Plug 'sheerun/vim-polyglot'
+Plug 'vim-python/python-syntax', {'for': 'python'}
 
 "===============
 " File Explorer
@@ -119,7 +117,6 @@ Plug 'junegunn/fzf.vim'
 "==================
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'christoomey/vim-conflicted'
 
 "=========================
 " Miscellaneous plugins
@@ -134,7 +131,6 @@ Plug 'direnv/direnv.vim'
 " Themes
 "========
 Plug 'arcticicestudio/nord-vim'
-" Plug 'flazz/vim-colorschemes'
 
 "------------------------------------------------------------------------------
 call plug#end()
@@ -170,8 +166,6 @@ set shiftwidth=4                                                        " visual
 set expandtab                                                           " use <TAB> to insert a tab...
 set guioptions-=m                                                       " remove menu bar
 set guioptions-=T                                                       " remove toolbar
-" set guioptions-=r                                                       " remove right-hand scroll bar
-" set guioptions-=L                                                       " remove left-hand scroll bar
 set cursorline                                                          " highlight line in which cursor is on
 set guicursor=n:blinkon0                                                " don't blink cursor in normal mode
 set nu rnu                                                              " show linenumbers relative to current line
@@ -202,6 +196,18 @@ au BufWritePost .vimrc so ~/.vimrc                                      " automa
 
 set autoread                                                            " automatically update file if changed in another buffer
 au FocusGained * :checktime
+
+
+set wildignore+=.git,.hg,.svn                                           " wildcard ignores
+set wildignore+=*.aux,*.out,*.toc
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+set wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+set wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
+set wildignore+=*.eot,*.otf,*.ttf,*.woff
+set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+set wildignore+=*.swp,.lock,.DS_Store,._*
 
 "
 "
