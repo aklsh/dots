@@ -73,3 +73,6 @@ node_modules
 # Direnv files
 .envrc
 .direnv
+
+# GTKWave waveforms (usually large)
+*.vcd

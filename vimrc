@@ -28,11 +28,14 @@
 " Gotta be first
 set nocompatible
 filetype off
+
+" check if vim-plug exists; if not, install
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 	autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
 endif
+
 "
 "
 " ╔═══════════════════════════════════════════════════════════════════╗
@@ -44,15 +47,10 @@ endif
 "
 nnoremap j gj
 nnoremap k gk
-nnoremap <leader>gl <C-W><C-]>
-nnoremap <leader>gh <C-W><C-T>
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
-tnoremap <leader><Esc> <C-w>N
-nnoremap <leader>nt :FloatermNew<CR>
-nnoremap <leader>t :FloatermToggle<CR>
 vnoremap > >gv
 vnoremap < <gv
 nnoremap <silent> <leader>, :noh<CR>
@@ -99,6 +97,7 @@ Plug 'mbbill/undotree'
 " Language-Specific
 "===================
 Plug 'vim-python/python-syntax', {'for': 'python'}
+Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
 
 "===============
 " File Explorer
@@ -122,7 +121,6 @@ Plug 'tpope/vim-fugitive'
 " Miscellaneous plugins
 "=========================
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'Raimondi/delimitMate'
 Plug 'aperezdc/vim-template'
 Plug 'mhinz/vim-startify'
 Plug 'direnv/direnv.vim'
@@ -236,6 +234,12 @@ nnoremap <silent> <leader>gd :Gdiffsplit<CR>
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeStatusLine = -1
 
+"==================================
+" jistr/vim-nerdtree-tabs settings
+"==================================
+nmap <silent> <F7> :NERDTreeToggle<CR>
+let g:nerdtree_tabs_open_on_gui_startup = 0                             " To have NERDTree NOT open on startup
+
 "===================================
 " scrooloose/nerdcommenter settings
 "===================================
@@ -253,12 +257,6 @@ let g:NERDToggleCheckAllLines = 1                                       " Enable
 let g:airline_powerline_fonts = 1                                       " Fancy arrow symbol
 let g:airline#extensions#tabline#enabled = 1                            " Show airline for tabs too
 let g:airline_theme = "base16_nord"                                     " Airline theme
-
-"==================================
-" jistr/vim-nerdtree-tabs settings
-"==================================
-nmap <silent> <F7> :NERDTreeToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup = 0                             " To have NERDTree NOT open on startup
 
 "=============================
 " xolox/vim-easytags settings
@@ -281,20 +279,6 @@ nmap <silent> <F8> :TagbarToggle<CR>
 " airblade/vim-gitgutter settings
 "=================================
 let g:airline#extensions#hunks#non_zero_only = 1                        " In vim-airline, only display 'hunks' if the diff is non-zero
-
-"===============================
-" Raimondi/delimitMate settings
-"===============================
-let delimitMate_expand_cr = 1
-augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType verilog_systemverilog let b:delimitMate_quotes = "`"
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-  au FileType python let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-augroup END
 
 "==========================================
 " nathanaelkane/vim-indent-guides settings
@@ -333,6 +317,17 @@ nnoremap <silent> <leader>SW :StripWhitespace!<CR>
 " mbbill/undotree settings
 "==========================
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
+
+"===================================
+" vim-python/python-syntax settings
+"===================================
+let g:python_highlight_builtins = 1
+let g:python_highlight_exceptions = 1
+let g:python_highlight_doctests = 1
+let g:python_highlight_operators = 1
+let g:python_highlight_class_vars = 1
+let g:python_highlight_func_calls = 1
+let g:python_highlight_file_headers_as_comments = 1
 
 " Local Configs
 source ~/.vimrc.local
