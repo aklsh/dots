@@ -54,10 +54,10 @@ nnoremap <C-h> <C-W><C-H>
 vnoremap > >gv
 vnoremap < <gv
 nnoremap <silent> <leader>, :noh<CR>
+tnoremap <silent> <Esc> <C-\><C-n>
 nnoremap <silent> <leader>bn :bnext<CR>
 nnoremap <silent> <leader>bp :bprevious<CR>
 nnoremap <silent> <leader>bd :bdelete<CR>
-
 
 "
 "
@@ -120,10 +120,8 @@ Plug 'tpope/vim-fugitive'
 "=========================
 " Miscellaneous plugins
 "=========================
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'aperezdc/vim-template'
 Plug 'mhinz/vim-startify'
-Plug 'direnv/direnv.vim'
 
 "========
 " Themes
@@ -158,6 +156,8 @@ endif
 set ruler                                                               " show cursor co-ordinates
 set showcmd                                                             " show commands while being typed out
 set incsearch                                                           " show partial search hits
+set ignorecase
+set smartcase
 set hlsearch                                                            " highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
 set shiftwidth=4                                                        " visual mode shift with >, < etc.
@@ -165,7 +165,7 @@ set expandtab                                                           " use <T
 set guioptions-=m                                                       " remove menu bar
 set guioptions-=T                                                       " remove toolbar
 set cursorline                                                          " highlight line in which cursor is on
-set guicursor=n:blinkon0                                                " don't blink cursor in normal mode
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
 set mouse=a                                                             " make mouse to be used in all modes
@@ -180,6 +180,8 @@ syntax on
 set background=dark                                                     " dark theme
 colorscheme nord                                                        " ultimate awesomeness
 set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
+set autoread                                                            " automatically update file if changed in another buffer
+set cmdheight=2
 
 set undofile                                                            " as many undo levels as possible
 set undolevels=1000
@@ -190,13 +192,13 @@ hi clear SignColumn                                                     " put sy
 autocmd TermOpen * setlocal nonu nornu                                  " no linenumbers for terminals
 autocmd TermOpen * startinsert
 
-au BufWritePost .vimrc so ~/.vimrc                                      " automatically reload vimrc when it's saved
+autocmd BufWritePre * %s/\s\+$//e                                       " Automatically deletes all trailing whitespace and newlines at end of file on save
+autocmd BufWritepre * %s/\n\+\%$//e
 
-set autoread                                                            " automatically update file if changed in another buffer
-au FocusGained * :checktime
+au BufWritePost ~/.vimrc so ~/.vimrc                                    " automatically reload vimrc when it's saved
 
-
-set wildignore+=.git,.hg,.svn                                           " wildcard ignores
+" wildcard ignores
+set wildignore+=.git,.hg,.svn
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
 set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
@@ -246,7 +248,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0                             " To hav
 let g:NERDSpaceDelims = 1                                               " Add spaces after comment delimiters by default
 let g:NERDDefaultAlign = 'left'                                         " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDAltDelims_python = 1                                          " Set a language to use its alternate delimiters by default
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }   " Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '**/' } }  " Add your own custom formats or override the defaults
 let g:NERDCommentEmptyLines = 1                                         " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1                                    " Enable trimming of trailing whitespace when uncommenting
 let g:NERDToggleCheckAllLines = 1                                       " Enable NERDCommenterToggle to check all selected lines is commented or not
@@ -307,12 +309,6 @@ inoremap <silent><expr> <Tab>
 "============================
 nnoremap <leader><space> :FZF<CR>
 
-"=========================================
-" ntpeters/vim-better-whitespace settings
-"=========================================
-nnoremap <silent> <leader>sw :StripWhitespace<CR>
-nnoremap <silent> <leader>SW :StripWhitespace!<CR>
-
 "==========================
 " mbbill/undotree settings
 "==========================
@@ -327,7 +323,14 @@ let g:python_highlight_doctests = 1
 let g:python_highlight_operators = 1
 let g:python_highlight_class_vars = 1
 let g:python_highlight_func_calls = 1
+let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
+
+"=========================================
+" vhda/verilog_systemverilog.vim settings
+"=========================================
+nnoremap <leader>i :VerilogFollowInstance<CR>
+nnoremap <leader>I :VerilogFollowPort<CR>
 
 " Local Configs
 source ~/.vimrc.local
