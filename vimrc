@@ -27,7 +27,7 @@
 
 " Gotta be first
 set nocompatible
-filetype off
+filetype plugin on
 
 " check if vim-plug exists; if not, install
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -86,6 +86,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'google/vim-searchindex'
 
 "========================
 " Out-of-the-World plugs
