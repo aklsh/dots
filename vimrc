@@ -51,6 +51,7 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
+nnoremap <C-[> <C-t>
 vnoremap > >gv
 vnoremap < <gv
 nnoremap <silent> <leader>, :noh<CR>
@@ -75,9 +76,8 @@ call plug#begin('~/.vim/plugged')
 "==================
 " Plugins for tags
 "==================
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 
 "=========================
 " Some productivity plugs
@@ -105,12 +105,6 @@ Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
 "===============
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
-
-"==============
-" Fuzzy finder
-"==============
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 
 "==================
 " Working with Git
@@ -166,6 +160,7 @@ set expandtab                                                           " use <T
 set guioptions-=m                                                       " remove menu bar
 set guioptions-=T                                                       " remove toolbar
 set cursorline                                                          " highlight line in which cursor is on
+set statusline+=%{gutentags#statusline()}
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
@@ -183,6 +178,8 @@ colorscheme nord                                                        " ultima
 set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
 set autoread                                                            " automatically update file if changed in another buffer
 set cmdheight=2
+set splitright
+set splitbelow
 
 set undofile                                                            " as many undo levels as possible
 set undolevels=1000
@@ -236,12 +233,7 @@ nnoremap <silent> <leader>gd :Gdiffsplit<CR>
 "==============================
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeStatusLine = -1
-
-"==================================
-" jistr/vim-nerdtree-tabs settings
-"==================================
 nmap <silent> <F7> :NERDTreeToggle<CR>
-let g:nerdtree_tabs_open_on_gui_startup = 0                             " To have NERDTree NOT open on startup
 
 "===================================
 " scrooloose/nerdcommenter settings
@@ -272,6 +264,7 @@ let g:easytags_async = 1
 let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
+let g:easytags_always_enabled = 1
 
 "============================
 " majutsushi/tagbar settings
@@ -335,3 +328,4 @@ nnoremap <leader>I :VerilogFollowPort<CR>
 
 " Local Configs
 source ~/.vimrc.local
+autocmd Filetype gitcommit setlocal spell textwidth=72
