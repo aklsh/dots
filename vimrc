@@ -117,6 +117,7 @@ Plug 'tpope/vim-fugitive'
 "=========================
 Plug 'aperezdc/vim-template'
 Plug 'mhinz/vim-startify'
+Plug 'direnv/direnv.vim'
 
 "========
 " Themes
@@ -227,12 +228,14 @@ nnoremap <silent> <leader>gp :Gpush<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gd :Gdiffsplit<CR>
+autocmd Filetype gitcommit setlocal spell textwidth=72                  " To make sure commit messages aren't a huge line
 
 "==============================
 " scrooloose/nerdtree settings
 "==============================
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeStatusLine = -1
+let g:NERDTreeRespectWildIgnore = 1
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
 "===================================
@@ -298,6 +301,8 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+let g:python3_host_prog = "~/nvim-venv/.direnv/python-3.9.0/bin/python"
+
 "============================
 " junegunn/fzf.vim settings
 "============================
@@ -328,4 +333,3 @@ nnoremap <leader>I :VerilogFollowPort<CR>
 
 " Local Configs
 source ~/.vimrc.local
-autocmd Filetype gitcommit setlocal spell textwidth=72
