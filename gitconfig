@@ -53,6 +53,22 @@
 
 # ---------------------------------------------------
 
+[merge]
+    tool = meld
+[mergetool "meld"]
+    path = /usr/bin/meld
+    trustExitCode = false
+
+# ---------------------------------------------------
+
+[diff]
+    guitool = meld
+[difftool "meld"]
+    path = /usr/bin/meld
+    trustExitCode = false
+
+# ---------------------------------------------------
+
 [web]
     browser = mozilla-firefox
 
