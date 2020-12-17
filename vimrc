@@ -92,7 +92,6 @@ Plug 'google/vim-searchindex'
 " Out-of-the-World plugs
 "========================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mbbill/undotree'
 
 "===================
 " Language-Specific
@@ -117,7 +116,6 @@ Plug 'tpope/vim-fugitive'
 "=========================
 Plug 'aperezdc/vim-template'
 Plug 'mhinz/vim-startify'
-Plug 'direnv/direnv.vim'
 
 "========
 " Themes
@@ -138,7 +136,7 @@ call plug#end()
 "
 set encoding=UTF-8                                                      " ummm...many people use this?
 set noerrorbells                                                        " no sounds
-set showmode                                                            " always show which mode vim is in
+set noshowmode                                                          " don't show which mode vim is in
 set backspace=indent,eol,start                                          " use <BS> as intended by intuition
 set nocompatible
 if (has("termguicolors"))                                               " Terminal colors
@@ -152,8 +150,6 @@ endif
 set ruler                                                               " show cursor co-ordinates
 set showcmd                                                             " show commands while being typed out
 set incsearch                                                           " show partial search hits
-set ignorecase
-set smartcase
 set hlsearch                                                            " highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
 set shiftwidth=4                                                        " visual mode shift with >, < etc.
@@ -162,7 +158,9 @@ set guioptions-=m                                                       " remove
 set guioptions-=T                                                       " remove toolbar
 set cursorline                                                          " highlight line in which cursor is on
 set statusline+=%{gutentags#statusline()}
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50              " cursor styles
+              \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+              \,sm:block-blinkwait175-blinkoff150-blinkon175
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
 set mouse=a                                                             " make mouse to be used in all modes
@@ -178,8 +176,8 @@ set background=dark                                                     " dark t
 colorscheme nord                                                        " ultimate awesomeness
 set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
 set autoread                                                            " automatically update file if changed in another buffer
-set cmdheight=2
-set splitright
+set cmdheight=2                                                         " default is too less
+set splitright                                                          " splits open below and right
 set splitbelow
 
 set undofile                                                            " as many undo levels as possible
@@ -191,15 +189,15 @@ hi clear SignColumn                                                     " put sy
 autocmd TermOpen * setlocal nonu nornu                                  " no linenumbers for terminals
 autocmd TermOpen * startinsert
 
-autocmd BufWritePre * %s/\s\+$//e                                       " Automatically deletes all trailing whitespace and newlines at end of file on save
+autocmd BufWritePre * %s/\s\+$//e                                       " Automatically deletes trailing whitespace and newlines at end of file on save
 autocmd BufWritepre * %s/\n\+\%$//e
 
 au BufWritePost ~/.vimrc so ~/.vimrc                                    " automatically reload vimrc when it's saved
 
 " wildcard ignores
-set wildignore+=.git,.hg,.svn
+set wildignore+=.git,.hg,.svn,__pycache__
 set wildignore+=*.aux,*.out,*.toc
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class,*.pyc,*.pyo
 set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
 set wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
 set wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
@@ -207,6 +205,7 @@ set wildignore+=*.eot,*.otf,*.ttf,*.woff
 set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 set wildignore+=*.swp,.lock,.DS_Store,._*
+set wildignore+=tags
 
 "
 "
@@ -228,7 +227,6 @@ nnoremap <silent> <leader>gp :Gpush<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gd :Gdiffsplit<CR>
-autocmd Filetype gitcommit setlocal spell textwidth=72                  " To make sure commit messages aren't a huge line
 
 "==============================
 " scrooloose/nerdtree settings
@@ -244,10 +242,14 @@ nmap <silent> <F7> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims = 1                                               " Add spaces after comment delimiters by default
 let g:NERDDefaultAlign = 'left'                                         " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDAltDelims_python = 1                                          " Set a language to use its alternate delimiters by default
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '**/' } }  " Add your own custom formats or override the defaults
 let g:NERDCommentEmptyLines = 1                                         " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1                                    " Enable trimming of trailing whitespace when uncommenting
 let g:NERDToggleCheckAllLines = 1                                       " Enable NERDCommenterToggle to check all selected lines is commented or not
+
+"=======================================
+" ludovicchabant/vim-gutentags settings
+"=======================================
+set tags=./tags,tags,~/.vimtags                                         " Where to look for tags files
 
 "==================================
 " vim-airline/vim-airline settings
@@ -255,29 +257,14 @@ let g:NERDToggleCheckAllLines = 1                                       " Enable
 let g:airline_powerline_fonts = 1                                       " Fancy arrow symbol
 let g:airline#extensions#tabline#enabled = 1                            " Show airline for tabs too
 let g:airline_theme = "base16_nord"                                     " Airline theme
-
-"=============================
-" xolox/vim-easytags settings
-"=============================
-set tags=./tags,tags,~/.vimtags                                         " Where to look for tags files
-
-" Sensible defaults
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_always_enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#wordcount#filetypes = 	['vimwiki', 'tex', 'rmd', 'markdown', 'text']
+let g:airline#extensions#wordcount#formatter#default#fmt = '%s words'
 
 "============================
 " majutsushi/tagbar settings
 "============================
 nmap <silent> <F8> :TagbarToggle<CR>
-
-"=================================
-" airblade/vim-gitgutter settings
-"=================================
-let g:airline#extensions#hunks#non_zero_only = 1                        " In vim-airline, only display 'hunks' if the diff is non-zero
 
 "==========================================
 " nathanaelkane/vim-indent-guides settings
@@ -302,16 +289,32 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 let g:python3_host_prog = "~/nvim-venv/.direnv/python-3.9.0/bin/python"
-
-"============================
-" junegunn/fzf.vim settings
-"============================
-nnoremap <leader><space> :FZF<CR>
-
-"==========================
-" mbbill/undotree settings
-"==========================
-nnoremap <silent> <leader>u :UndotreeToggle<CR>
+"================================
+" itchyny/lightline.vim settings
+"================================
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
+    \ }
 
 "===================================
 " vim-python/python-syntax settings
@@ -324,12 +327,6 @@ let g:python_highlight_class_vars = 1
 let g:python_highlight_func_calls = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
-
-"=========================================
-" vhda/verilog_systemverilog.vim settings
-"=========================================
-nnoremap <leader>i :VerilogFollowInstance<CR>
-nnoremap <leader>I :VerilogFollowPort<CR>
 
 " Local Configs
 source ~/.vimrc.local
