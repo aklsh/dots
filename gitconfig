@@ -54,18 +54,20 @@
 # ---------------------------------------------------
 
 [merge]
-    tool = meld
+    	tool = meld
 [mergetool "meld"]
-    path = /usr/bin/meld
-    trustExitCode = false
+    	path = /usr/bin/meld
+    	trustExitCode = false
+	prompt = false
 
 # ---------------------------------------------------
 
 [diff]
-    guitool = meld
+   	guitool = meld
 [difftool "meld"]
-    path = /usr/bin/meld
-    trustExitCode = false
+   	path = /usr/bin/meld
+   	trustExitCode = false
+	prompt = false
 
 # ---------------------------------------------------
 
