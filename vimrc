@@ -257,9 +257,6 @@ set tags=./tags,tags,~/.vimtags                                         " Where 
 let g:airline_powerline_fonts = 1                                       " Fancy arrow symbol
 let g:airline#extensions#tabline#enabled = 1                            " Show airline for tabs too
 let g:airline_theme = "base16_nord"                                     " Airline theme
-let g:airline#extensions#wordcount#enabled = 1
-let g:airline#extensions#wordcount#filetypes = 	['vimwiki', 'tex', 'rmd', 'markdown', 'text']
-let g:airline#extensions#wordcount#formatter#default#fmt = '%s words'
 
 "============================
 " majutsushi/tagbar settings
@@ -289,32 +286,6 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 
 let g:python3_host_prog = "~/nvim-venv/.direnv/python-3.9.0/bin/python"
-"================================
-" itchyny/lightline.vim settings
-"================================
-if !has('gui_running')
-  set t_Co=256
-endif
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel'
-      \ }
-    \ }
 
 "===================================
 " vim-python/python-syntax settings
