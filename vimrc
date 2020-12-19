@@ -300,4 +300,9 @@ let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
 
 " Local Configs
+augroup auFileTypes
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=100
+augroup end
+
 source ~/.vimrc.local
