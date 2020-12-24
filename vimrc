@@ -92,6 +92,7 @@ Plug 'google/vim-searchindex'
 " Out-of-the-World plugs
 "========================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mileszs/ack.vim'
 
 "===================
 " Language-Specific
@@ -298,6 +299,12 @@ let g:python_highlight_class_vars = 1
 let g:python_highlight_func_calls = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
+
+function! Find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 
 " Local Configs
 augroup auFileTypes
