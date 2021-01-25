@@ -99,6 +99,7 @@ Plug 'mileszs/ack.vim'
 "===================
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
+Plug 'lervag/vimtex', {'for': 'tex'}
 
 "===============
 " File Explorer
@@ -151,14 +152,13 @@ endif
 set ruler                                                               " show cursor co-ordinates
 set showcmd                                                             " show commands while being typed out
 set incsearch                                                           " show partial search hits
-set hlsearch                                                            " highlight search results
+set nohlsearch                                                          " don't highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
 set shiftwidth=4                                                        " visual mode shift with >, < etc.
 set expandtab                                                           " use <TAB> to insert a tab...
 set guioptions-=m                                                       " remove menu bar
 set guioptions-=T                                                       " remove toolbar
 set cursorline                                                          " highlight line in which cursor is on
-set statusline+=%{gutentags#statusline()}
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50              " cursor styles
               \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
               \,sm:block-blinkwait175-blinkoff150-blinkon175
@@ -188,12 +188,20 @@ set undodir=~/.vim/undodir
 
 hi clear SignColumn                                                     " put symbols in the sign column - gitgutter etc.
 autocmd TermOpen * setlocal nonu nornu                                  " no linenumbers for terminals
-autocmd TermOpen * startinsert
+autocmd TermOpen * startinsert                                          " start in insert mode
 
-autocmd BufWritePre * %s/\s\+$//e                                       " Automatically deletes trailing whitespace and newlines at end of file on save
-autocmd BufWritepre * %s/\n\+\%$//e
+function! StripTrailingLinesAndSpaces()
+    " exclude md filetypes
+    if &ft =~ 'markdown'
+        return
+    endif
+    %s/\s\+$//e
+    %s/\n\+\%$//e
+endfun
 
-au BufWritePost ~/.vimrc so ~/.vimrc                                    " automatically reload vimrc when it's saved
+autocmd BufWritePre * call StripTrailingLinesAndSpaces()                " Automatically deletes trailing whitespace and newlines at end of file on save
+
+au BufWritePost ~/.vimrc so ~/.vimrc                                    " Automatically reload vimrc when it's saved
 
 " wildcard ignores
 set wildignore+=.git,.hg,.svn,__pycache__
@@ -300,16 +308,24 @@ let g:python_highlight_func_calls = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
 
+"==========================
+" mileszs/ack.vim settings
+"==========================
 function! Find_git_root()
   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction
 
 command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 
+"========================
+" lervag/vimtex settings
+"========================
+" TODO
+
 " Local Configs
 augroup auFileTypes
   autocmd!
-  autocmd FileType markdown setlocal textwidth=100
+  autocmd FileType markdown, text setlocal textwidth=100
 augroup end
 
 source ~/.vimrc.local
