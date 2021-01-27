@@ -5,6 +5,7 @@ export PATH=/usr/bin/vendor_perl:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/aklsh/.oh-my-zsh"
 export EDITOR="/usr/bin/nvim"
+export BROWSER="/usr/bin/firefox"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,18 +76,18 @@ source $ZSH/oh-my-zsh.sh
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
 
 #
-# # ex - archive extractor
-# # usage: ex <file>
+# # extract - archive extractor
+# # usage: extract <file>
 ex ()
 {
   if [ -f $1 ] ; then
@@ -94,12 +95,12 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
+      *.zip)       gunzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
@@ -118,7 +119,7 @@ ex ()
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshrc="nvim ~/.zshrc"
+alias zrc="nvim ~/.zshrc"
 alias cat="bat"
 
 # For direnv
