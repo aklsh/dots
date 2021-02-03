@@ -8,5 +8,5 @@ _**Editor**_: Neovim
 _**Shell**_: zsh  
 _**DE/WM**_: KDE Plasma / i3  
 _**Browser**_: Firefox  
-_**Password Manager**_: pass (with Firefox Integration)  
-_**Color Scheme**_: Nord
+_**Color Scheme**_: Nord  
+_**Hotel**_: Trivago
