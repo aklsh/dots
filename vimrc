@@ -91,6 +91,7 @@ Plug 'google/vim-searchindex'
 "========================
 " Out-of-the-World plugs
 "========================
+" TODO: migrate to nvim-lsp in neovim0.5
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mileszs/ack.vim'
 
@@ -188,7 +189,7 @@ set undodir=~/.vim/undodir
 
 hi clear SignColumn                                                     " put symbols in the sign column - gitgutter etc.
 autocmd TermOpen * setlocal nonu nornu                                  " no linenumbers for terminals
-autocmd TermOpen * startinsert                                          " start in insert mode
+autocmd TermOpen * startinsert                                          " start terminal in insert mode
 
 function! StripTrailingLinesAndSpaces()
     " exclude md filetypes
@@ -320,7 +321,34 @@ command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 "========================
 " lervag/vimtex settings
 "========================
-" TODO
+let g:tex_flavor = "xelatex"
+let g:vimtex_view_method = "zathura"
+let g:vimtex_view_automatic = 0
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_syntax_enabled = 0
+
+" Don't let vimtex autoindent things (it sucks at it).
+let g:vimtex_indent_enabled = 0
+let g:latex_indent_enabled = 0
+
+" Disable insert mode mappings
+let g:vimtex_imaps_enabled = 0
+
+" Make vimtex recognise end-of-line comments when using 'gq'.
+let g:vimtex_format_enabled = 1
+
+let g:vimtex_compiler_latexmk = {
+    \ 'continuous' : 0,
+    \}
+
+augroup vimrc_tex
+    au!
+    au FileType tex nmap <buffer><silent> <leader>c <plug>(vimtex-compile)
+    au FileType tex nmap <buffer><silent> <leader>v <plug>(vimtex-view)
+    au FileType tex nmap <buffer><silent> <leader>e <plug>(vimtex-errors)
+    au FileType tex nmap <buffer><silent> <leader>w :VimtexCountWord<CR>
+    au FileType tex nmap <buffer><silent> <leader>l :!chktex %<CR>
+augroup END
 
 " Local Configs
 augroup auFileTypes
