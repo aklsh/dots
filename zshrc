@@ -127,3 +127,4 @@ eval "$(direnv hook zsh)"
 
 # Misc auto-appends
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zshrc.local
