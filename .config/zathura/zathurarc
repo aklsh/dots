@@ -28,15 +28,27 @@ set recolor-keephue             "true"
 
 # STARTUP OPTIONS
 # ---------------
-set adjust-open width
-set show-scrollbars     true
-set window-title-basename true
-set statusbar-home-tilde  true
-set selection-clipboard   clipboard
+set adjust-open                 "width"
+set show-scrollbars             "true"
+set window-title-basename       "true"
+set statusbar-home-tilde        "true"
+set statusbar-h-padding         "15"
+set statusbar-v-padding         "15"
+set selection-clipboard         "clipboard"
+set font                        "FiraCode Nerd Font Mono 10"
 
-map <Left> navigate previous
-map <Right> navigate next
-map + zoom in
-map - zoom out
-map <C-[> jumplist backward
-map <C-]> jumplist forward
+# KEY-BINDINGS
+# ------------
+map <Left>                      navigate previous
+map <Right>                     navigate next
+map <C-=>                       zoom in
+map <C-->                       zoom out
+map <C-[>                       jumplist backward
+map <C-]>                       jumplist forward
+map <C-i>                       recolor
+
+# UNMAPs
+# ------
+unmap <C-r>
+unmap -
+unmap +
