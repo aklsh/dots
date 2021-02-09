@@ -127,4 +127,5 @@ eval "$(direnv hook zsh)"
 
 # Misc auto-appends
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 source ~/.zshrc.local
