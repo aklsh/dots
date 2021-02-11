@@ -10,7 +10,7 @@
 # defaults
 separator_block_width=30
 separator=true
-color=#ffffff
+color=#eceff4
 command=$HOME/.config/i3blocks/scripts/$BLOCK_NAME
 
 [network]
@@ -19,7 +19,11 @@ interval=1
 
 [bandwidth]
 instance=wlp2s0
-interval=10
+interval=1
+
+[trash]
+label=
+interval=3
 
 [battery]
 interval=1
@@ -34,14 +38,7 @@ signal=11
 
 [time]
 min_width=00:00
-instance=%H:%M
 interval=1
-separator=true
 
 [date]
 interval=3600
-instance=%a, %b %d, %G
-
-[trash]
-label=
-interval=3

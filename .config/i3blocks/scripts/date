@@ -2,7 +2,4 @@
 
 # Outputs the date
 
-dat=$(date '+%A, %d %b %Y')
-# dat=$(date '+%d %b (%a) %Y')
-# dat=$(date '+%d %b (%a)')
-echo "  $dat "
+echo "$(date '+%A, %d %b %Y') "
