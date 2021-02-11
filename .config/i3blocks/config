@@ -13,11 +13,11 @@ separator=true
 color=#eceff4
 command=$HOME/.config/i3blocks/scripts/$BLOCK_NAME
 
-[network]
+[bandwidth]
 instance=wlp2s0
 interval=1
 
-[bandwidth]
+[network]
 instance=wlp2s0
 interval=1
 
