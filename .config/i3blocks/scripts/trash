@@ -23,7 +23,7 @@ TRASH_COUNT=$(ls -U -1 "${TRASH_DIRECTORY}/files" | wc -l)
 
 URGENT_VALUE=10
 #
-echo " ${TRASH_COUNT} "
+echo " ${TRASH_COUNT}"
 # echo "${TRASH_COUNT}"
 echo ""
 

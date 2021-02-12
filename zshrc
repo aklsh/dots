@@ -121,6 +121,7 @@ ex ()
 # Example aliases
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
+alias wifi="nmtui-connect"
 
 # For direnv
 eval "$(direnv hook zsh)"
