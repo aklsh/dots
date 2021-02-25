@@ -351,9 +351,4 @@ augroup vimrc_tex
 augroup END
 
 " Local Configs
-augroup auFileTypes
-  autocmd!
-  autocmd FileType markdown, text setlocal textwidth=100
-augroup end
-
 source ~/.vimrc.local
