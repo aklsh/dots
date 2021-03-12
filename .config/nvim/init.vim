@@ -18,7 +18,7 @@
 "
 "
 " Author: Akilesh Kannan
-" Contact: akileshkannan@gmail.com
+" Contact: aklsh@tuta.io
 " Web: https://aklsh.github.io
 "
 " How I configure (Neo)Vim :P
@@ -91,8 +91,8 @@ Plug 'google/vim-searchindex'
 "========================
 " Out-of-the-World plugs
 "========================
-" TODO: migrate to nvim-lsp in neovim0.5
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 Plug 'mileszs/ack.vim'
 
 "===================
@@ -117,7 +117,6 @@ Plug 'tpope/vim-fugitive'
 "=========================
 " Miscellaneous plugins
 "=========================
-Plug 'aperezdc/vim-template'
 Plug 'mhinz/vim-startify'
 
 "========
@@ -202,10 +201,7 @@ endfun
 
 autocmd BufWritePre * call StripTrailingLinesAndSpaces()                " Automatically deletes trailing whitespace and newlines at end of file on save
 
-au BufWritePost ~/.vimrc so ~/.vimrc                                    " Automatically reload vimrc when it's saved
-
-" wildcard ignores
-set wildignore+=.git,.hg,.svn,__pycache__
+set wildignore+=.git,.hg,.svn,__pycache__                               " wildcard ignores
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class,*.pyc,*.pyo
 set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
@@ -216,6 +212,8 @@ set wildignore+=*.doc,*.pdf,*.cbr,*.cbz
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 set wildignore+=*.swp,.lock,.DS_Store,._*
 set wildignore+=tags
+
+source ~/.vimrc.local                                                   " Local Configs
 
 "
 "
@@ -267,6 +265,7 @@ set tags=./tags,tags,~/.vimtags                                         " Where 
 let g:airline_powerline_fonts = 1                                       " Fancy arrow symbol
 let g:airline#extensions#tabline#enabled = 1                            " Show airline for tabs too
 let g:airline_theme = "base16_nord"                                     " Airline theme
+let g:airline#extensions#tagbar#enabled = 0
 
 "============================
 " majutsushi/tagbar settings
@@ -280,22 +279,37 @@ let g:indent_guides_enable_on_vim_startup = 1                           " Enable
 let g:indent_guides_guide_size = 1                                      " Size of guide - single character gives IDE feel
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar']  " Exclude these filetypes - they become annoying
 
-"============================
-" neoclide/coc.nvim settings
-"============================
-" use <tab> for trigger completion and navigate to the next complete item
-" credits: coc.vim README
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" ======================
+" neovim/nvim-lspconfig
+" ======================
+lua << EOF
+    local nvim_lsp = require('lspconfig')
+    local on_attach = function(client, bufnr)
+        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    end
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+    -- Use a loop to conveniently both setup defined servers
+    -- and map buffer local keybindings when the language server attaches
+    local servers = { "jedi_language_server", "rust_analyzer", "texlab", "ccls" }
+    for _, lsp in ipairs(servers) do
+      nvim_lsp[lsp].setup { on_attach = on_attach }
+    end
+EOF
 
-let g:python3_host_prog = "~/nvim-venv/.direnv/python-3.9.0/bin/python"
+" Use <Tab> and <S-Tab> to navigate through popup menu
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+let g:completion_trigger_keyword_length = 3 " default = 1
+let g:completion_matching_smart_case = 1
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+let g:completion_enable_auto_popup = 1
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" " Avoid showing message extra message when using completion
+set shortmess+=c
 
 "===================================
 " vim-python/python-syntax settings
@@ -308,6 +322,7 @@ let g:python_highlight_class_vars = 1
 let g:python_highlight_func_calls = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
+let g:python3_host_prog = '~/.vim/.direnv/python-3.8.6/bin/python3'
 
 "==========================
 " mileszs/ack.vim settings
@@ -345,10 +360,6 @@ augroup vimrc_tex
     au!
     au FileType tex nmap <buffer><silent> <leader>c <plug>(vimtex-compile)
     au FileType tex nmap <buffer><silent> <leader>v <plug>(vimtex-view)
-    au FileType tex nmap <buffer><silent> <leader>e <plug>(vimtex-errors)
     au FileType tex nmap <buffer><silent> <leader>w :VimtexCountWord<CR>
     au FileType tex nmap <buffer><silent> <leader>l :!chktex %<CR>
 augroup END
-
-" Local Configs
-source ~/.vimrc.local

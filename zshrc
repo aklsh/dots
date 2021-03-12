@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
+export PATH=$HOME/Matlab/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/aklsh/.oh-my-zsh"
@@ -65,6 +66,7 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+    zsh-completions
 	virtualenv
     sudo
 	)
@@ -111,7 +113,8 @@ ex ()
 }
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export MAKEFLAGS="-j9"
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -121,12 +124,7 @@ ex ()
 # Example aliases
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
-alias wifi="nmtui-connect"
-
-# For direnv
-eval "$(direnv hook zsh)"
 
 # Misc auto-appends
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(direnv hook zsh)"
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
-source ~/.zshrc.local
