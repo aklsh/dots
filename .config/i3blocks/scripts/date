@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# Outputs the date
-
-echo "$(date '+%A, %d %b %Y') "
