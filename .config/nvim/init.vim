@@ -82,8 +82,6 @@ Plug 'ludovicchabant/vim-gutentags'
 "=========================
 " Some productivity plugs
 "=========================
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'google/vim-searchindex'
@@ -93,6 +91,8 @@ Plug 'google/vim-searchindex'
 "========================
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mileszs/ack.vim'
 
 "===================
@@ -114,15 +114,12 @@ Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-"=========================
-" Miscellaneous plugins
-"=========================
-Plug 'mhinz/vim-startify'
-
 "========
 " Themes
 "========
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
+Plug 'fugalh/desert.vim'
 
 "------------------------------------------------------------------------------
 call plug#end()
@@ -151,6 +148,7 @@ else
 endif
 set ruler                                                               " show cursor co-ordinates
 set showcmd                                                             " show commands while being typed out
+set laststatus=1
 set incsearch                                                           " show partial search hits
 set nohlsearch                                                          " don't highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
@@ -174,7 +172,7 @@ set exrc                                                                " use lo
 set secure                                                              " for local vimrc
 syntax on
 set background=dark                                                     " dark theme
-colorscheme nord                                                        " ultimate awesomeness
+colorscheme gruvbox                                                     " ultimate awesomeness
 set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
 set autoread                                                            " automatically update file if changed in another buffer
 set cmdheight=2                                                         " default is too less
@@ -259,14 +257,6 @@ let g:NERDToggleCheckAllLines = 1                                       " Enable
 "=======================================
 set tags=./tags,tags,~/.vimtags                                         " Where to look for tags files
 
-"==================================
-" vim-airline/vim-airline settings
-"==================================
-let g:airline_powerline_fonts = 1                                       " Fancy arrow symbol
-let g:airline#extensions#tabline#enabled = 1                            " Show airline for tabs too
-let g:airline_theme = "base16_nord"                                     " Airline theme
-let g:airline#extensions#tagbar#enabled = 0
-
 "============================
 " majutsushi/tagbar settings
 "============================
@@ -300,13 +290,13 @@ EOF
 " Use <Tab> and <S-Tab> to navigate through popup menu
 imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)
-let g:completion_trigger_keyword_length = 3 " default = 1
+let g:completion_trigger_keyword_length = 3
 let g:completion_matching_smart_case = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
 let g:completion_enable_auto_popup = 1
 
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noselect
 
 " " Avoid showing message extra message when using completion
 set shortmess+=c
@@ -337,7 +327,8 @@ command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 " lervag/vimtex settings
 "========================
 let g:tex_flavor = "xelatex"
-let g:vimtex_view_method = "zathura"
+let g:vimtex_view_method = "general"
+let g:vimtex_view_general_viewer = "evince"
 let g:vimtex_view_automatic = 0
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_syntax_enabled = 0
@@ -363,3 +354,53 @@ augroup vimrc_tex
     au FileType tex nmap <buffer><silent> <leader>w :VimtexCountWord<CR>
     au FileType tex nmap <buffer><silent> <leader>l :!chktex %<CR>
 augroup END
+
+
+"=============================
+" hrsh7th/nvim-compe settings
+"=============================
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+
+let g:compe.source = {}
+let g:compe.source.path = v:true
+let g:compe.source.buffer = v:true
+let g:compe.source.calc = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:true
+let g:compe.source.vsnip = v:true
+
+"==========================================
+" nvim-treesitter/nvim-treesitter settings
+"==========================================
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+}
+EOF
