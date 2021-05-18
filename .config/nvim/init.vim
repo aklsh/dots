@@ -100,7 +100,9 @@ Plug 'mileszs/ack.vim'
 "===================
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
+Plug 'mtikekar/vim-bsv', {'for': 'bsv'}
 Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'stevearc/vim-arduino'
 
 "===============
 " File Explorer
@@ -163,7 +165,6 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50              " cursor
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
 set mouse=a                                                             " make mouse to be used in all modes
-set ttyfast                                                             " fast terminal
 set timeout timeoutlen=1000 ttimeoutlen=50                              " timeout for key-mappings
 set laststatus=2                                                        " always show status bar
 set switchbuf=useopen                                                   " use existing buffer when opening file again
@@ -197,6 +198,7 @@ function! StripTrailingLinesAndSpaces()
     %s/\n\+\%$//e
 endfun
 
+au BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++
 autocmd BufWritePre * call StripTrailingLinesAndSpaces()                " Automatically deletes trailing whitespace and newlines at end of file on save
 
 set wildignore+=.git,.hg,.svn,__pycache__                               " wildcard ignores
