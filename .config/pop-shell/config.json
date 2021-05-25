@@ -1,0 +1,90 @@
+{
+  "float": [
+    {
+      "class": "pop-shell-example",
+      "title": "pop-shell-example"
+    },
+    {
+      "class": "Update-manager"
+    },
+    {
+      "class": "discord",
+      "title": "Discord Updater"
+    },
+    {
+      "class": "minivmac"
+    },
+    {
+      "class": "Software-properties-gtk",
+      "title": "Software & Updates"
+    },
+    {
+      "class": "Forticlientsslvpn"
+    },
+    {
+      "class": "Microsoft Teams - Preview",
+      "title": "Loading Microsoft Teams"
+    },
+    {
+      "class": "Gnome-terminal",
+      "title": "Preferences – Profile “Pop”"
+    },
+    {
+      "class": "ocs-url",
+      "title": "ocs-url"
+    },
+    {
+      "class": "Gnome-terminal",
+      "title": "Preferences – Profile “Nord”"
+    },
+    {
+      "class": "Gnome-terminal",
+      "title": "wine Downloads/LTspiceXVII.exe"
+    },
+    {
+      "class": "zoom",
+      "title": "Zoom Cloud Meetings"
+    },
+    {
+      "class": "MATLABWindow",
+      "title": "MathWorks Product Installer"
+    },
+    {
+      "class": "MATLABWindow",
+      "title": "Add-On Product Installer"
+    },
+    {
+      "class": "FortiClient",
+      "title": "FortiClient"
+    },
+    {
+      "class": "zoom",
+      "title": "Leave meeting"
+    },
+    {
+      "class": "Gnome-calculator"
+    },
+    {
+      "class": "mpv"
+    },
+    {
+      "class": "Gjs",
+      "title": "Choose Color"
+    },
+    {
+      "class": "Gnome-terminal",
+      "title": "Preferences – Profile “default”"
+    },
+    {
+      "class": "Caffeine-indicator",
+      "title": "About Caffeine Indicator"
+    },
+    {
+      "class": "com-main-Main",
+      "title": "JavaClient"
+    }
+  ],
+  "log_on_focus": false,
+  "move_pointer_on_switch": false,
+  "default_pointer_position": "TOP_LEFT"
+}

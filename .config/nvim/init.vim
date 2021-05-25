@@ -201,7 +201,7 @@ endfun
 au BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++
 autocmd BufWritePre * call StripTrailingLinesAndSpaces()                " Automatically deletes trailing whitespace and newlines at end of file on save
 
-set wildignore+=.git,.hg,.svn,__pycache__                               " wildcard ignores
+set wildignore+=.git,.hg,.svn,__pycache__                               " wildcard ignores in file explorers
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class,*.pyc,*.pyo
 set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
@@ -294,7 +294,7 @@ imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)
 let g:completion_trigger_keyword_length = 3
 let g:completion_matching_smart_case = 1
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_auto_popup = 1
 
 " Set completeopt to have a better completion experience
