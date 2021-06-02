@@ -90,10 +90,10 @@ Plug 'google/vim-searchindex'
 " Out-of-the-World plugs
 "========================
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mileszs/ack.vim'
+Plug 'jbyuki/venn.nvim'
 
 "===================
 " Language-Specific
