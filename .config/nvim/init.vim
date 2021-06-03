@@ -24,11 +24,6 @@
 " How I configure (Neo)Vim :P
 "
 
-
-" Gotta be first
-set nocompatible
-filetype plugin on
-
 " check if vim-plug exists; if not, install
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -135,22 +130,20 @@ call plug#end()
 " ╚═══════════════════════════════════════════════════════════════════╝
 "
 "
-set encoding=UTF-8                                                      " ummm...many people use this?
 set noerrorbells                                                        " no sounds
 set noshowmode                                                          " don't show which mode vim is in
-set backspace=indent,eol,start                                          " use <BS> as intended by intuition
-set nocompatible
+
 if (has("termguicolors"))                                               " Terminal colors
   set termguicolors
 endif
+
 if has('unnamedplus')                                                   " Copy to/from system clipboard
     set clipboard=unnamed,unnamedplus
 else
     set clipboard=unnamed
 endif
+
 set ruler                                                               " show cursor co-ordinates
-set showcmd                                                             " show commands while being typed out
-set laststatus=1
 set incsearch                                                           " show partial search hits
 set nohlsearch                                                          " don't highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
@@ -171,7 +164,6 @@ set switchbuf=useopen                                                   " use ex
 set noswapfile                                                          " get rid of crap - who tf recovers a swp file?
 set exrc                                                                " use local vimrcs
 set secure                                                              " for local vimrc
-syntax on
 set background=dark                                                     " dark theme
 colorscheme gruvbox                                                     " ultimate awesomeness
 set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
