@@ -44,33 +44,33 @@
 # ---------------------------------------------------
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 # ---------------------------------------------------
 
 [core]
-	excludesfile = ~/.gitignore
-	editor = nvim
+    excludesfile = ~/.gitignore
+    editor = nvim
 
 # ---------------------------------------------------
 
 [merge]
-    	tool = meld
+    tool = meld
 [mergetool]
-	prompt = false
+    prompt = false
 [mergetool "meld"]
-    	path = /usr/bin/meld
-    	trustExitCode = false
+    path = /usr/bin/meld
+    trustExitCode = false
 
 # ---------------------------------------------------
 
 [diff]
    	guitool = meld
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "meld"]
    	path = /usr/bin/meld
    	trustExitCode = false
@@ -92,5 +92,15 @@
 
 # ---------------------------------------------------
 
+[gpg]
+    program = /usr/bin/gpg
+
+# ---------------------------------------------------
+
+[commit]
+    gpgsign = true
+
+# ---------------------------------------------------
+
 [include]
-  path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
