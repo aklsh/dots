@@ -12,4 +12,4 @@ _**Color Scheme**_: Nord
 _**Hotel**_: Trivago
 
 ## Screenshot
-![rice](/scrots/rice.png)
+![rice](/scrots/nord.png)
