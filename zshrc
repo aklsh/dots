@@ -66,12 +66,12 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+    zsh-autosuggestions
+    zsh-syntax-highlighting
     zsh-completions
-	virtualenv
+    virtualenv
     sudo
-	)
+    )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,7 +104,7 @@ ex ()
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
       *.tgz)       tar xzf $1   ;;
-      *.zip)       gunzip $1     ;;
+      *.zip)       unzip $1     ;;
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
@@ -115,7 +115,7 @@ ex ()
 }
 
 # Compilation flags
-export MAKEFLAGS="-j9"
+export MAKEFLAGS="-j13"
 export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -123,10 +123,8 @@ export ARCHFLAGS="-arch x86_64"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
 
 # Misc auto-appends
 eval "$(direnv hook zsh)"
-test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
