@@ -426,7 +426,6 @@ gir1.2-gdkpixbuf-2.0
 gir1.2-gdm-1.0
 gir1.2-geoclue-2.0
 gir1.2-geocodeglib-1.0
-gir1.2-gepub-0.6
 gir1.2-glib-2.0
 gir1.2-gnomebluetooth-1.0
 gir1.2-gnomedesktop-3.0
@@ -466,7 +465,6 @@ gir1.2-spiceclientglib-2.0
 gir1.2-spiceclientgtk-3.0
 gir1.2-telepathyglib-0.12
 gir1.2-telepathylogger-0.2
-gir1.2-tracker-2.0
 gir1.2-upowerglib-1.0
 gir1.2-vte-2.91
 gir1.2-webkit2-4.0
@@ -481,7 +479,6 @@ glib-networking-services
 glib-networking
 gnome-accessibility-themes
 gnome-bluetooth
-gnome-books
 gnome-calculator
 gnome-calendar
 gnome-control-center-data
@@ -1329,7 +1326,6 @@ libgeoclue-2-0
 libgeocode-glib-dev
 libgeocode-glib-doc
 libgeocode-glib0
-libgepub-0.6-0
 libgexiv2-2
 libgfbgraph-0.2-0
 libgfortran-10-dev
@@ -1438,7 +1434,6 @@ libgs9-common
 libgs9
 libgsf-1-114
 libgsf-1-common
-libgsf-bin
 libgsl25
 libgslcblas0
 libgsm1-dev
@@ -1742,9 +1737,11 @@ libmount1
 libmount1
 libmozjs-78-0
 libmp3lame0
+libmpc-dev
 libmpc3
 libmpcdec6
 libmpeg2-4
+libmpfr-dev
 libmpfr6
 libmpg123-0
 libmpx2
@@ -2669,6 +2666,7 @@ papirus-icon-theme
 parted
 passwd
 patch
+patchutils
 pavucontrol
 pci.ids
 pciutils
@@ -3088,7 +3086,6 @@ udisks2
 ufw
 uhd-host
 uno-libs-private
-unoconv
 unrar
 unzip
 update-inetd
