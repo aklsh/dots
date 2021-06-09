@@ -19,6 +19,7 @@ TAGS
 .TAGS
 !TAGS/
 tags
+tags.*
 .tags
 !tags/
 gtags.files
