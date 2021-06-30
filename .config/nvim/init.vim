@@ -19,7 +19,7 @@
 "
 " Author: Akilesh Kannan
 " Contact: aklsh@tuta.io
-" Web: https://aklsh.github.io
+" Web: https://aklsh.now.sh
 "
 " How I configure (Neo)Vim :P
 "
@@ -87,7 +87,6 @@ Plug 'google/vim-searchindex'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'hrsh7th/nvim-compe'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'mileszs/ack.vim'
 Plug 'jbyuki/venn.nvim'
 
@@ -117,7 +116,6 @@ Plug 'tpope/vim-fugitive'
 "========
 Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
-Plug 'fugalh/desert.vim'
 
 "------------------------------------------------------------------------------
 call plug#end()
@@ -132,7 +130,6 @@ call plug#end()
 "
 "
 set noerrorbells                                                        " no sounds
-set noshowmode                                                          " don't show which mode vim is in
 
 if (has("termguicolors"))                                               " Terminal colors
   set termguicolors
@@ -223,10 +220,10 @@ source ~/.vimrc.local                                                   " Local 
 "=============================
 " Key mappings for essential git commands
 nnoremap <silent> <leader>ga :Gwrite<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gp :Gpush<CR>
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gc :Git commit<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gs :Git<CR>
+nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gd :Gdiffsplit<CR>
 
 "==============================
@@ -285,6 +282,8 @@ EOF
 " Use <Tab> and <S-Tab> to navigate through popup menu
 imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)
+
+" Completion settings
 let g:completion_trigger_keyword_length = 3
 let g:completion_matching_smart_case = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
@@ -324,7 +323,7 @@ command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
 let g:tex_flavor = "xelatex"
 let g:vimtex_view_method = "general"
 let g:vimtex_view_general_viewer = "evince"
-let g:vimtex_view_automatic = 0
+let g:vimtex_view_automatic = 1
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_syntax_enabled = 0
 
@@ -339,15 +338,13 @@ let g:vimtex_imaps_enabled = 0
 let g:vimtex_format_enabled = 1
 
 let g:vimtex_compiler_latexmk = {
-    \ 'continuous' : 0,
+    \ 'continuous' : 1,
     \}
 
 augroup vimrc_tex
     au!
     au FileType tex nmap <buffer><silent> <leader>c <plug>(vimtex-compile)
     au FileType tex nmap <buffer><silent> <leader>v <plug>(vimtex-view)
-    au FileType tex nmap <buffer><silent> <leader>w :VimtexCountWord<CR>
-    au FileType tex nmap <buffer><silent> <leader>l :!chktex %<CR>
 augroup END
 
 
@@ -375,27 +372,3 @@ let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:true
-
-"==========================================
-" nvim-treesitter/nvim-treesitter settings
-"==========================================
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-}
-EOF
