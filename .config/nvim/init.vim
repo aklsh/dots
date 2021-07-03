@@ -99,10 +99,11 @@ Plug 'mtikekar/vim-bsv', {'for': 'bsv'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'stevearc/vim-arduino'
 
-"===============
-" File Explorer
-"===============
+"============================
+" File Explorer & Statusline
+"============================
 Plug 'ryanoasis/vim-devicons'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'preservim/nerdtree'
 
 "==================
@@ -146,7 +147,7 @@ set incsearch                                                           " show p
 set nohlsearch                                                          " don't highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
 set shiftwidth=4                                                        " visual mode shift with >, < etc.
-set expandtab                                                           " use <TAB> to insert a tab...
+set expandtab                                                           " convert Tabs to eqvt spaces
 set guioptions-=m                                                       " remove menu bar
 set guioptions-=T                                                       " remove toolbar
 set cursorline                                                          " highlight line in which cursor is on
@@ -155,7 +156,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50              " cursor
               \,sm:block-blinkwait175-blinkoff150-blinkon175
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
-set mouse=a                                                             " make mouse to be used in all modes
+set mouse=a                                                             " allow mouse to be used in all modes
 set timeout timeoutlen=1000 ttimeoutlen=50                              " timeout for key-mappings
 set laststatus=2                                                        " always show status bar
 set switchbuf=useopen                                                   " use existing buffer when opening file again
@@ -347,7 +348,6 @@ augroup vimrc_tex
     au FileType tex nmap <buffer><silent> <leader>v <plug>(vimtex-view)
 augroup END
 
-
 "=============================
 " hrsh7th/nvim-compe settings
 "=============================
@@ -372,3 +372,36 @@ let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:true
+
+"===============================
+" hoob3rt/lualine.nvim settings
+"===============================
+lua << EOF
+    require'lualine'.setup {
+      options = {
+        icons_enabled = true,
+        theme = 'gruvbox',
+        component_separators = "",
+        section_separators = "",
+        disabled_filetypes = {}
+      },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff'},
+        lualine_c = {'filename'},
+        lualine_x = {'filetype'},
+        lualine_y = {''},
+        lualine_z = {'location'}
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+      },
+      tabline = {},
+      extensions = {'fugitive', 'nerdtree'}
+    }
+EOF

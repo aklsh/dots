@@ -3,11 +3,11 @@
     "_modelId": "405700000000",
     "_name": "Wireless Mouse B330/M330/M331",
     "_sensitive": {
-      "divert-keys": false,
-      "lowres-smooth-scroll": false,
-      "mouse-gestures": false,
-      "pointer_speed": false,
-      "reprogrammable-keys": false
+      "divert-keys": true,
+      "lowres-smooth-scroll": true,
+      "mouse-gestures": true,
+      "pointer_speed": true,
+      "reprogrammable-keys": true
     },
     "_serial": "3720ACBD",
     "_unitId": "3720ACBD",
@@ -17,7 +17,7 @@
       "82": 1
     },
     "lowres-smooth-scroll": false,
-    "mouse-gestures": "0",
+    "mouse-gestures": "82",
     "pointer_speed": 255,
     "reprogrammable-keys": {
       "80": 80,

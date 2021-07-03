@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=$HOME/Matlab/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
