@@ -307,7 +307,7 @@ let g:python_highlight_class_vars = 1
 let g:python_highlight_func_calls = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
-let g:python3_host_prog = '~/.vim/.direnv/python-3.8.6/bin/python3'
+let g:python3_host_prog = '~/.vim/.direnv/python-3.9.5/bin/python3'
 
 "==========================
 " mileszs/ack.vim settings
@@ -327,26 +327,10 @@ let g:vimtex_view_general_viewer = "evince"
 let g:vimtex_view_automatic = 1
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_syntax_enabled = 0
-
-" Don't let vimtex autoindent things (it sucks at it).
-let g:vimtex_indent_enabled = 0
+let g:vimtex_indent_enabled = 0                                         " Don't let vimtex autoindent things
 let g:latex_indent_enabled = 0
-
-" Disable insert mode mappings
-let g:vimtex_imaps_enabled = 0
-
-" Make vimtex recognise end-of-line comments when using 'gq'.
-let g:vimtex_format_enabled = 1
-
-let g:vimtex_compiler_latexmk = {
-    \ 'continuous' : 1,
-    \}
-
-augroup vimrc_tex
-    au!
-    au FileType tex nmap <buffer><silent> <leader>c <plug>(vimtex-compile)
-    au FileType tex nmap <buffer><silent> <leader>v <plug>(vimtex-view)
-augroup END
+let g:vimtex_format_enabled = 1                                         " Make vimtex recognise end-of-line comments when using 'gq'.
+let g:vimtex_toc_show_preamble = 0                                      " Don't show preamble in ToC
 
 "=============================
 " hrsh7th/nvim-compe settings
