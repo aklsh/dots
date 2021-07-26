@@ -28,7 +28,7 @@
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 "
@@ -88,14 +88,12 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'mileszs/ack.vim'
-Plug 'jbyuki/venn.nvim'
 
 "===================
 " Language-Specific
 "===================
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
-Plug 'mtikekar/vim-bsv', {'for': 'bsv'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'stevearc/vim-arduino'
 
@@ -195,7 +193,7 @@ autocmd BufWritePre * call StripTrailingLinesAndSpaces()                " Automa
 set wildignore+=.git,.hg,.svn,__pycache__                               " wildcard ignores in file explorers
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class,*.pyc,*.pyo
-set wildignore+=*.ai,*.bmp,*.gif,*.psd,*.webp
+set wildignore+=*.ai,*.bmp,*.gif,*.psd,*.webp,*.pdf
 set wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
 set wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
 set wildignore+=*.eot,*.otf,*.ttf,*.woff
@@ -204,7 +202,7 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 set wildignore+=*.swp,.lock,.DS_Store,._*
 set wildignore+=tags
 
-source ~/.vimrc.local                                                   " Local Configs
+source ~/.vimrc.local                                                   " Sensitive Configs
 
 "
 "
@@ -274,7 +272,7 @@ lua << EOF
 
     -- Use a loop to conveniently both setup defined servers
     -- and map buffer local keybindings when the language server attaches
-    local servers = { "jedi_language_server", "rust_analyzer", "texlab", "ccls" }
+    local servers = { "jedi_language_server", "texlab", "ccls" }
     for _, lsp in ipairs(servers) do
       nvim_lsp[lsp].setup { on_attach = on_attach }
     end
@@ -288,7 +286,6 @@ imap <s-tab> <Plug>(completion_smart_s_tab)
 let g:completion_trigger_keyword_length = 3
 let g:completion_matching_smart_case = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-let g:completion_enable_auto_popup = 1
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noselect
@@ -332,30 +329,30 @@ let g:latex_indent_enabled = 0
 let g:vimtex_format_enabled = 1                                         " Make vimtex recognise end-of-line comments when using 'gq'.
 let g:vimtex_toc_show_preamble = 0                                      " Don't show preamble in ToC
 
-"=============================
-" hrsh7th/nvim-compe settings
-"=============================
-let g:compe = {}
-let g:compe.enabled = v:true
-let g:compe.autocomplete = v:true
-let g:compe.debug = v:false
-let g:compe.min_length = 1
-let g:compe.preselect = 'enable'
-let g:compe.throttle_time = 80
-let g:compe.source_timeout = 200
-let g:compe.incomplete_delay = 400
-let g:compe.max_abbr_width = 100
-let g:compe.max_kind_width = 100
-let g:compe.max_menu_width = 100
-let g:compe.documentation = v:true
-
-let g:compe.source = {}
-let g:compe.source.path = v:true
-let g:compe.source.buffer = v:true
-let g:compe.source.calc = v:true
-let g:compe.source.nvim_lsp = v:true
-let g:compe.source.nvim_lua = v:true
-let g:compe.source.vsnip = v:true
+" "=============================
+" " hrsh7th/nvim-compe settings
+" "=============================
+" let g:compe = {}
+" let g:compe.enabled = v:true
+" let g:compe.autocomplete = v:true
+" let g:compe.debug = v:false
+" let g:compe.min_length = 1
+" let g:compe.preselect = 'enable'
+" let g:compe.throttle_time = 80
+" let g:compe.source_timeout = 200
+" let g:compe.incomplete_delay = 400
+" let g:compe.max_abbr_width = 100
+" let g:compe.max_kind_width = 100
+" let g:compe.max_menu_width = 100
+" let g:compe.documentation = v:true
+"
+" let g:compe.source = {}
+" let g:compe.source.path = v:true
+" let g:compe.source.buffer = v:true
+" let g:compe.source.calc = v:true
+" let g:compe.source.nvim_lsp = v:true
+" let g:compe.source.nvim_lua = v:true
+" let g:compe.source.vsnip = v:true
 
 "===============================
 " hoob3rt/lualine.nvim settings
