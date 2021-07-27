@@ -86,7 +86,6 @@ Plug 'google/vim-searchindex'
 "========================
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'hrsh7th/nvim-compe'
 Plug 'mileszs/ack.vim'
 
 "===================
@@ -272,7 +271,7 @@ lua << EOF
 
     -- Use a loop to conveniently both setup defined servers
     -- and map buffer local keybindings when the language server attaches
-    local servers = { "jedi_language_server", "texlab", "ccls" }
+    local servers = { "pyright", "texlab", "ccls" }
     for _, lsp in ipairs(servers) do
       nvim_lsp[lsp].setup { on_attach = on_attach }
     end
@@ -282,16 +281,9 @@ EOF
 imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)
 
-" Completion settings
-let g:completion_trigger_keyword_length = 3
-let g:completion_matching_smart_case = 1
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+set completeopt=menuone,noselect,preview                                " Set completeopt to have a better completion experience
 
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noselect
-
-" " Avoid showing message extra message when using completion
-set shortmess+=c
+set shortmess+=c                                                        " Avoid showing message extra message when using completion
 
 "===================================
 " vim-python/python-syntax settings
@@ -328,31 +320,6 @@ let g:vimtex_indent_enabled = 0                                         " Don't 
 let g:latex_indent_enabled = 0
 let g:vimtex_format_enabled = 1                                         " Make vimtex recognise end-of-line comments when using 'gq'.
 let g:vimtex_toc_show_preamble = 0                                      " Don't show preamble in ToC
-
-" "=============================
-" " hrsh7th/nvim-compe settings
-" "=============================
-" let g:compe = {}
-" let g:compe.enabled = v:true
-" let g:compe.autocomplete = v:true
-" let g:compe.debug = v:false
-" let g:compe.min_length = 1
-" let g:compe.preselect = 'enable'
-" let g:compe.throttle_time = 80
-" let g:compe.source_timeout = 200
-" let g:compe.incomplete_delay = 400
-" let g:compe.max_abbr_width = 100
-" let g:compe.max_kind_width = 100
-" let g:compe.max_menu_width = 100
-" let g:compe.documentation = v:true
-"
-" let g:compe.source = {}
-" let g:compe.source.path = v:true
-" let g:compe.source.buffer = v:true
-" let g:compe.source.calc = v:true
-" let g:compe.source.nvim_lsp = v:true
-" let g:compe.source.nvim_lua = v:true
-" let g:compe.source.vsnip = v:true
 
 "===============================
 " hoob3rt/lualine.nvim settings
