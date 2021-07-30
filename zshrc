@@ -129,3 +129,5 @@ alias cat="bat"
 # Misc auto-appends
 eval "$(direnv hook zsh)"
 source ~/.zshrc.local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

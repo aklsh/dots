@@ -19,7 +19,7 @@
 "
 " Author: Akilesh Kannan
 " Contact: aklsh@tuta.io
-" Web: https://aklsh.now.sh
+" Web: https://aklsh.tech
 "
 " How I configure (Neo)Vim :P
 "
@@ -77,20 +77,20 @@ Plug 'ludovicchabant/vim-gutentags'
 "=========================
 " Some productivity plugs
 "=========================
-Plug 'scrooloose/nerdcommenter'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'google/vim-searchindex'
+Plug 'jiangmiao/auto-pairs'
 
-"========================
-" Out-of-the-World plugs
-"========================
+"===========
+" LSP plugs
+"===========
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'mileszs/ack.vim'
 
-"===================
-" Language-Specific
-"===================
+"================
+" Language plugs
+"================
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'vhda/verilog_systemverilog.vim', {'for': 'verilog_systemverilog'}
 Plug 'lervag/vimtex', {'for': 'tex'}
@@ -102,6 +102,14 @@ Plug 'stevearc/vim-arduino'
 Plug 'ryanoasis/vim-devicons'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'preservim/nerdtree'
+Plug 'mhinz/vim-startify'
+
+"==============
+" Fuzzy Finder
+"==============
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 "==================
 " Working with Git
@@ -112,7 +120,6 @@ Plug 'tpope/vim-fugitive'
 "========
 " Themes
 "========
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 
 "------------------------------------------------------------------------------
@@ -128,29 +135,15 @@ call plug#end()
 "
 "
 set noerrorbells                                                        " no sounds
-
-if (has("termguicolors"))                                               " Terminal colors
-  set termguicolors
-endif
-
-if has('unnamedplus')                                                   " Copy to/from system clipboard
-    set clipboard=unnamed,unnamedplus
-else
-    set clipboard=unnamed
-endif
-
+set termguicolors                                                       " Terminal colors
+set clipboard=unnamed,unnamedplus                                       " Copy to/from system clipboard
 set ruler                                                               " show cursor co-ordinates
 set incsearch                                                           " show partial search hits
 set nohlsearch                                                          " don't highlight search results
 set tabstop=4                                                           " tab width=4. PERIOD.
 set shiftwidth=4                                                        " visual mode shift with >, < etc.
 set expandtab                                                           " convert Tabs to eqvt spaces
-set guioptions-=m                                                       " remove menu bar
-set guioptions-=T                                                       " remove toolbar
 set cursorline                                                          " highlight line in which cursor is on
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50              " cursor styles
-              \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-              \,sm:block-blinkwait175-blinkoff150-blinkon175
 set nu rnu                                                              " show linenumbers relative to current line
 set updatetime=100                                                      " fast update time to make plugins update faster
 set mouse=a                                                             " allow mouse to be used in all modes
@@ -158,22 +151,25 @@ set timeout timeoutlen=1000 ttimeoutlen=50                              " timeou
 set laststatus=2                                                        " always show status bar
 set switchbuf=useopen                                                   " use existing buffer when opening file again
 set noswapfile                                                          " get rid of crap - who tf recovers a swp file?
-set exrc                                                                " use local vimrcs
-set secure                                                              " for local vimrc
-set background=dark                                                     " dark theme
-colorscheme gruvbox                                                     " ultimate awesomeness
 set signcolumn=yes                                                      " always show sign column - so that text doesn't shift
 set autoread                                                            " automatically update file if changed in another buffer
+set autoindent                                                          " automatically indent lines
 set cmdheight=2                                                         " default is too less
-set splitright                                                          " splits open below and right
-set splitbelow
+set splitright                                                          " splits open right
+set splitbelow                                                          " splits open below
+set exrc                                                                " use local vimrcs
+set secure                                                              " for local vimrc
 
 set undofile                                                            " as many undo levels as possible
 set undolevels=1000
 set undoreload=10000
 set undodir=~/.vim/undodir
 
-hi clear SignColumn                                                     " put symbols in the sign column - gitgutter etc.
+set background=dark                                                     " dark theme
+colorscheme gruvbox                                                     " ultimate awesomeness
+
+hi clear signcolumn                                                     " clear signcolumn - o/w will get weird bg on signcolumns
+
 autocmd TermOpen * setlocal nonu nornu                                  " no linenumbers for terminals
 autocmd TermOpen * startinsert                                          " start terminal in insert mode
 
@@ -232,16 +228,6 @@ let g:NERDTreeStatusLine = -1
 let g:NERDTreeRespectWildIgnore = 1
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
-"===================================
-" scrooloose/nerdcommenter settings
-"===================================
-let g:NERDSpaceDelims = 1                                               " Add spaces after comment delimiters by default
-let g:NERDDefaultAlign = 'left'                                         " Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDAltDelims_python = 1                                          " Set a language to use its alternate delimiters by default
-let g:NERDCommentEmptyLines = 1                                         " Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDTrimTrailingWhitespace = 1                                    " Enable trimming of trailing whitespace when uncommenting
-let g:NERDToggleCheckAllLines = 1                                       " Enable NERDCommenterToggle to check all selected lines is commented or not
-
 "=======================================
 " ludovicchabant/vim-gutentags settings
 "=======================================
@@ -251,13 +237,6 @@ set tags=./tags,tags,~/.vimtags                                         " Where 
 " majutsushi/tagbar settings
 "============================
 nmap <silent> <F8> :TagbarToggle<CR>
-
-"==========================================
-" nathanaelkane/vim-indent-guides settings
-"==========================================
-let g:indent_guides_enable_on_vim_startup = 1                           " Enable Indent-Guides on startup
-let g:indent_guides_guide_size = 1                                      " Size of guide - single character gives IDE feel
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'tagbar']  " Exclude these filetypes - they become annoying
 
 " ======================
 " neovim/nvim-lspconfig
@@ -281,8 +260,7 @@ EOF
 imap <tab> <Plug>(completion_smart_tab)
 imap <s-tab> <Plug>(completion_smart_s_tab)
 
-set completeopt=menuone,noselect,preview                                " Set completeopt to have a better completion experience
-
+set completeopt=menuone,noselect                                        " Set completeopt to have a better completion experience
 set shortmess+=c                                                        " Avoid showing message extra message when using completion
 
 "===================================
@@ -296,16 +274,7 @@ let g:python_highlight_class_vars = 1
 let g:python_highlight_func_calls = 1
 let g:python_highlight_indent_errors = 1
 let g:python_highlight_file_headers_as_comments = 1
-let g:python3_host_prog = '~/.vim/.direnv/python-3.9.5/bin/python3'
-
-"==========================
-" mileszs/ack.vim settings
-"==========================
-function! Find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-
-command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
+let g:python3_host_prog = '/home/aklsh/.vim/.direnv/python-3.9.5/bin/python3'
 
 "========================
 " lervag/vimtex settings
@@ -353,3 +322,41 @@ lua << EOF
       extensions = {'fugitive', 'nerdtree'}
     }
 EOF
+
+"=============================
+" mhinz/vim-startify settings
+"=============================
+let g:startify_change_to_vcs_root = 1
+let g:startify_lists = [
+    \ { 'type': 'files'     },
+    \ { 'type': 'sessions'  },
+    \ { 'type': 'bookmarks' },
+    \ { 'type': 'commands'  },
+    \ ]
+let  g:startify_bookmarks =  [
+    \ {'d': '~/dots' },
+    \ {'w': '~/Personal/website'},
+    \ {'s': '~/Personal/startpage'}
+    \ ]
+let g:startify_files_number = 5
+let g:startify_commands = [
+    \ {'ch': ['Health Check', ':checkhealth']},
+    \ {'ps': ['Plugins status', ':PlugStatus']},
+    \ {'pu': ['Update vim plugins',':PlugUpdate | PlugUpgrade']},
+    \ {'h': ['Help', ':help']},
+    \ ]
+let g:startify_custom_header = [
+            \'',
+            \'   ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+            \'   ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+            \'   ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+            \'   ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+            \'   ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+            \'   ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+            \'',
+            \'',
+    \ ]
+
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
