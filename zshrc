@@ -125,6 +125,7 @@ export ARCHFLAGS="-arch x86_64"
 #
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
+alias find="fdfind"
 
 # Misc auto-appends
 eval "$(direnv hook zsh)"
