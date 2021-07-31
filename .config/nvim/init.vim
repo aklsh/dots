@@ -182,6 +182,7 @@ function! StripTrailingLinesAndSpaces()
     %s/\n\+\%$//e
 endfun
 
+au TextYankPost * lua vim.highlight.on_yank{timeout=250, on_visual=false}
 au BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++
 autocmd BufWritePre * call StripTrailingLinesAndSpaces()                " Automatically deletes trailing whitespace and newlines at end of file on save
 
