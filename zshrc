@@ -126,6 +126,7 @@ export ARCHFLAGS="-arch x86_64"
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
 alias find="fdfind"
+alias luamake=/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake
 
 # Misc auto-appends
 eval "$(direnv hook zsh)"
