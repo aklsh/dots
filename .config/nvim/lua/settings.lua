@@ -29,51 +29,44 @@ wnd.rnu = true                                                            -- sho
 glb.updatetime = 100                                                      -- fast update time to make plugins update faster
 glb.mouse = 'a'                                                           -- allow mouse to be used in all modes
 glb.timeoutlen = 1000
-glb.ttimeoutlen = 100                                                      -- timeout for key-mappings
+glb.ttimeoutlen = 100                                                     -- timeout for key-mappings
 glb.switchbuf = 'usetab'                                                  -- use existing buffer when opening file again
 glb.swapfile = false                                                      -- get rid of crap - who tf recovers a swp file?
-wnd.signcolumn = true                                                     -- always show sign column - so that text doesn't shift
+wnd.signcolumn = 'yes'                                                    -- always show sign column - so that text doesn't shift
 glb.autoread = true                                                       -- automatically update file if changed in another buffer
 buf.autoindent = true                                                     -- automatically indent lines
-glb.cmdheight=2                                                           -- default is too less
+glb.cmdheight = 2                                                         -- default is too less
 glb.splitright = true                                                     -- splits open right
 glb.splitbelow = true                                                     -- splits open below
+glb.showtabline = 2
+glb.shortmess = 'filnxtToOFc'
 
 buf.undofile = true                                                       -- as many undo levels as possible
 buf.undolevels = 1000
 glb.undoreload = 10000
-glb.undodir = '~/.vim/undodir'
+glb.undodir = '/home/aklsh/.vim/undodir'
 
 glb.background = 'dark'                                                   -- dark theme
-colorscheme gruvbox                                                       -- ultimate awesomeness
+vim.cmd('colorscheme gruvbox')                                            -- ultimate awesomeness
 
-hi clear signcolumn                                                       -- clear signcolumn - o/w will get weird bg on signcolumns
+-- vim.cmd('autocmd BufWritePre *\(^md\)\@<! %s/\s\+$//e')
+-- vim.cmd('autocmd BufWritePre *\(^md\)\@<! %s/\n\+\%$//e')
 
-autocmd TermOpen * setlocal nonu nornu                                    -- no linenumbers for terminals
-autocmd TermOpen * startinsert                                            -- start terminal in insert mode
+vim.cmd('autocmd BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++')
+vim.cmd('au TextYankPost * lua vim.highlight.on_yank{timeout=200}')       -- highlight on yank
+-- vim.cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')     -- unknown filetypes = text
 
-function! StripTrailingLinesAndSpaces()
-    -- exclude md filetypes
-    if &ft =~ 'markdown'
-        return
-    endif
-    %s/\s\+$//e
-    %s/\n\+\%$//e
-endfun
+glb.wildignore = [[
+.git,.hg,.svn
+*.aux,*.out,*.toc
+*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+*.mp3,*.oga,*.ogg,*.wav,*.flac
+*.eot,*.otf,*.ttf,*.woff
+*.doc,*.pdf,*.cbr,*.cbz
+*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+*.swp,.lock,.DS_Store,._*
+]]
 
-au BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++
-autocmd BufWritePre * call StripTrailingLinesAndSpaces()                -- Automatically deletes trailing whitespace and newlines at end of file on save
-
-set wildignore+=.git,.hg,.svn,__pycache__                               -- wildcard ignores in file explorers
-set wildignore+=*.aux,*.out,*.toc
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class,*.pyc,*.pyo
-set wildignore+=*.ai,*.bmp,*.gif,*.psd,*.webp,*.pdf
-set wildignore+=*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
-set wildignore+=*.mp3,*.oga,*.ogg,*.wav,*.flac
-set wildignore+=*.eot,*.otf,*.ttf,*.woff
-set wildignore+=*.doc,*.cbr,*.cbz
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
-set wildignore+=*.swp,.lock,.DS_Store,._*
-set wildignore+=tags
-
-source ~/.vimrc.local                                                   -- Sensitive Configs
+vim.cmd('source ~/.vimrc.local')                                                   -- Sensitive Configs
