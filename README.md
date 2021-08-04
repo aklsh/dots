@@ -1,15 +1,11 @@
-# dots
+# Dots
 
-my dotfiles; hopefully will be up to date
+My dotfiles. Managed with `stow(8)`.
 
-## Details
+# Install
 
-_**Editor**_: Neovim  
-_**Shell**_: zsh  
-_**DE/WM**_: KDE Plasma / i3  
-_**Browser**_: Firefox  
-_**Color Scheme**_: Nord  
-_**Hotel**_: Trivago
-
-## Screenshot
-![rice](/scrots/nord.png)
+```shell
+cd ~
+git clone https://github.com/aklsh/dots.git && cd dots
+stow *
+```
