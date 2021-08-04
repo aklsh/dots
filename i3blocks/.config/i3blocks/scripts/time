@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Shows the current time
+time="$(date '+%H:%M')"
+echo "  $time "
