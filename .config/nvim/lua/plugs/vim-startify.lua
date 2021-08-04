@@ -4,7 +4,7 @@ g.startify_change_to_vcs_root = 1
 g.startify_files_number = 5
 
 vim.api.nvim_exec([===[
-let g:startify_lists = [ { 'type': 'dir', 'header': [ 'Files '. getcwd() ] }, { 'type': 'sessions',  'header': [ 'Sessions' ]       }, { 'type': 'bookmarks', 'header': [ 'Bookmarks' ]      }, { 'type': 'commands',  'header': [ 'Commands' ]       }, ]
+let g:startify_lists = [ { 'type': 'dir', 'header': [ 'Files '. getcwd() ] }, { 'type': 'sessions',  'header': [ 'Sessions' ] }, { 'type': 'bookmarks', 'header': [ 'Bookmarks' ]      }, { 'type': 'commands',  'header': [ 'Commands' ]       }, ]
 ]===], true)
 
 vim.api.nvim_exec([===[
@@ -13,7 +13,7 @@ let g:startify_commands = [{ 'up': [ 'Update/Sync Plugins', ':PackerSync' ] }, {
 true)
 
 vim.api.nvim_exec([===[
-let g:startify_bookmarks = [ { 'd': '~/dots' }, { 's': '~/Personal/startpage' }, { 'w': '~/Personal/website' } ]
+let g:startify_bookmarks = [ { 'd': '~/dots' }, { 's': '~/Personal/startpage' }, { 'w': '~/Personal/website' }, {'n': '~/.config/nvim'} ]
 ]===],
 true)
 

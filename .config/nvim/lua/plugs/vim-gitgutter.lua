@@ -1,6 +1,6 @@
 local g = vim.g
 
-g.gitgutter_override_sign_column_highlight = 0
+vim.cmd('hi clear signcolumn')
 g.gitgutter_sign_modified                  = '±'
 g.gitgutter_sign_removed                   = '-'
 g.gitgutter_sign_removed_first_line        = '^'
