@@ -1,5 +1,4 @@
 accountsservice
-ack
 acl
 acpi-support
 acpid
@@ -207,7 +206,6 @@ evince
 evolution-data-server-common
 evolution-data-server
 extra-xdg-menus
-exuberant-ctags
 fakeroot
 fd-find
 fdisk
@@ -557,6 +555,7 @@ gvfs-libs
 gvfs
 gzip
 hdparm
+hexyl
 hicolor-icon-theme
 hidpi-daemon
 hostname
@@ -759,6 +758,7 @@ libarchive-zip-perl
 libarchive13
 libargon2-1
 libaria2-0
+libaribb24-0
 libasan5
 libasan6
 libasm-java
@@ -770,6 +770,7 @@ libasound2-plugins
 libasound2
 libasound2
 libaspell15
+libass9
 libassuan0
 libasyncns0
 libasyncns0
@@ -989,6 +990,7 @@ libcapi20-3
 libcbor0.6
 libcc1-0
 libccolamd2
+libcddb2
 libcdio-cdda2
 libcdio-paranoia2
 libcdio19
@@ -1089,6 +1091,8 @@ libdbus-glib-1-2
 libdbusmenu-glib4
 libdbusmenu-gtk3-4
 libdbusmenu-gtk4
+libdc1394-25
+libdca0
 libdconf1
 libde265-0
 libdebconfclient0
@@ -1127,6 +1131,8 @@ libdrm-radeon1
 libdrm2
 libdrm2
 libdv4
+libdvbpsi10
+libdvdnav4
 libdvdread8
 libdw-dev
 libdw1
@@ -1134,6 +1140,7 @@ libdw1
 libdynaloader-functions-perl
 libe-book-0.1-1
 libebackend-1.2-10
+libebml5
 libebook-1.2-20
 libebook-contacts-1.2-3
 libecal-2.0-1
@@ -1195,6 +1202,7 @@ libexttextcat-2.0-0
 libexttextcat-data
 libextutils-depends-perl
 libextutils-pkgconfig-perl
+libfaad2
 libfabric1
 libfakeroot
 libfastjson4
@@ -1220,7 +1228,6 @@ libfile-find-rule-perl
 libfile-homedir-perl
 libfile-listing-perl
 libfile-mimeinfo-perl
-libfile-next-perl
 libfile-sharedir-perl
 libfile-slurper-perl
 libfile-stripnondeterminism-perl
@@ -1541,6 +1548,7 @@ libisl23
 libisofs6
 libitm1
 libiw30
+libixml10
 libjack-jackd2-0
 libjack-jackd2-0
 libjansi-java
@@ -1587,6 +1595,7 @@ libjxr-tools
 libjxr0
 libk5crypto3
 libk5crypto3
+libkate1
 libkeyutils1
 libkeyutils1
 libklibc
@@ -1613,6 +1622,7 @@ libldap-common
 libldb2
 liblibreofficekitgtk
 liblingua-translit-perl
+liblirc-client0
 liblist-allutils-perl
 liblist-moreutils-perl
 liblist-moreutils-xs-perl
@@ -1651,6 +1661,7 @@ liblzma-dev
 liblzma5
 liblzma5
 liblzo2-2
+libmad0
 libmagic-mgc
 libmagic1
 libmagick++-6.q16-8
@@ -1659,6 +1670,7 @@ libmagickcore-6.q16-6
 libmagickwand-6.q16-6
 libmail-sendmail-perl
 libmailtools-perl
+libmatroska7
 libmaxminddb0
 libmbim-glib4
 libmbim-proxy
@@ -1683,9 +1695,13 @@ libmount1
 libmount1
 libmozjs-78-0
 libmp3lame0
+libmpc-dev
 libmpc3
+libmpcdec6
 libmpdec3
 libmpeg2-4
+libmpfr-dev
+libmpfr-doc
 libmpfr6
 libmpg123-0
 libmpg123-0
@@ -1699,6 +1715,7 @@ libmutter-7-0
 libmwaw-0.3-3
 libmypaint-1.5-1
 libmypaint-common
+libmysofa1
 libmythes-1.2-0
 libnamespace-autoclean-perl
 libnamespace-clean-perl
@@ -1801,6 +1818,7 @@ libopenjp2-7
 libopenjp2-7
 libopenmpi-dev
 libopenmpi3
+libopenmpt-modplug1
 libopenmpt0
 libopus0
 libopus0
@@ -1886,6 +1904,7 @@ libpipewire-0.3-modules
 libpixman-1-0
 libpixman-1-0
 libpixman-1-dev
+libplacebo72
 libplist3
 libplot2c2
 libplymouth5
@@ -1909,9 +1928,12 @@ libpoppler107
 libpoppler107
 libpopt0
 libportaudio2
+libpostproc55
 libpotrace0
 libprocps8
+libprotobuf-lite23
 libprotobuf23
+libproxy-tools
 libproxy1-plugin-gsettings
 libproxy1-plugin-networkmanager
 libproxy1v5
@@ -1966,6 +1988,7 @@ libqt5webengine5
 libqt5webenginecore5
 libqt5webenginewidgets5
 libqt5widgets5
+libqt5x11extras5
 libqt5xml5
 libquadmath0
 libquvi-0.9-0.9.3
@@ -2028,6 +2051,7 @@ libreoffice-style-elementary
 libreoffice-style-yaru
 libreoffice-writer
 libreofficekit-data
+libresid-builder0c2a
 librest-0.7-0
 librevenge-0.0-0
 librhash0
@@ -2057,6 +2081,7 @@ libsasl2-modules-db
 libsasl2-modules
 libsaxon-java
 libsbc1
+libsdl-image1.2
 libsdl1.2debian
 libsdl2-2.0-0
 libsdl2-2.0-0
@@ -2078,6 +2103,7 @@ libservlet3.1-java
 libshine3
 libshout3
 libsidplay1v5
+libsidplay2
 libsigc++-2.0-0v5
 libsigsegv2
 libslang2
@@ -2107,6 +2133,7 @@ libsource-highlight-common
 libsource-highlight4v5
 libsoxr0
 libspa-0.2-modules
+libspatialaudio0
 libspecio-perl
 libspectre1
 libspeechd2
@@ -2191,6 +2218,7 @@ libtirpc-dev
 libtirpc3
 libtirpc3
 libtk8.6
+libtool-bin
 libtool
 libtotem-plparser-common
 libtotem-plparser-videosite
@@ -2233,6 +2261,7 @@ libuno-salhelpergcc3-3
 libunwind-dev
 libunwind8
 libunwind8
+libupnp13
 libupower-glib3
 liburi-perl
 liburing1
@@ -2277,6 +2306,10 @@ libvisual-0.4-0
 libvisual-0.4-0
 libvkd3d1
 libvkd3d1
+libvlc-bin
+libvlc5
+libvlccore9
+libvncclient1
 libvncserver1
 libvolk2-bin
 libvolk2-dev
@@ -2352,6 +2385,7 @@ libxau-dev
 libxau6
 libxau6
 libxaw7
+libxcb-composite0
 libxcb-dri2-0
 libxcb-dri2-0
 libxcb-dri3-0
@@ -2494,15 +2528,15 @@ linux-firmware
 linux-generic
 linux-headers-5.11.0-7620-generic
 linux-headers-5.11.0-7620
-linux-headers-5.13.5-051305-generic
-linux-headers-5.13.5-051305
+linux-headers-5.13.7-051307-generic
+linux-headers-5.13.7-051307
 linux-headers-generic
 linux-image-5.11.0-7620-generic
 linux-image-generic
-linux-image-unsigned-5.13.5-051305-generic
+linux-image-unsigned-5.13.7-051307-generic
 linux-libc-dev
 linux-modules-5.11.0-7620-generic
-linux-modules-5.13.5-051305-generic
+linux-modules-5.13.7-051307-generic
 linux-modules-extra-5.11.0-7620-generic
 linux-sound-base
 linux-system76
@@ -2631,6 +2665,7 @@ papirus-icon-theme
 parted
 passwd
 patch
+patchutils
 pavucontrol
 pci.ids
 pciutils
@@ -2884,6 +2919,7 @@ readline-common
 repoman
 resolvconf
 rfkill
+ripgrep
 rpcsvc-proto
 rsync
 rsyslog
@@ -3032,6 +3068,7 @@ tpm-udev
 tracker-extract
 tracker-miner-fs
 tracker
+tree
 ttf-bitstream-vera
 tzdata
 ubuntu-advantage-tools
@@ -3049,6 +3086,7 @@ udev
 udisks2
 ufw
 uhd-host
+universal-ctags
 uno-libs-private
 unzip
 update-inetd
@@ -3075,6 +3113,19 @@ vim-tiny
 virt-manager
 virt-viewer
 virtinst
+vlc-bin
+vlc-data
+vlc-l10n
+vlc-plugin-access-extra
+vlc-plugin-base
+vlc-plugin-notify
+vlc-plugin-qt
+vlc-plugin-samba
+vlc-plugin-skins2
+vlc-plugin-video-output
+vlc-plugin-video-splitter
+vlc-plugin-visualization
+vlc
 vprerex
 wamerican
 wayland-protocols
