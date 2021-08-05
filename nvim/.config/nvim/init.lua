@@ -21,7 +21,8 @@ require('settings')
 
 -- Plugin settings
 require('plugs.nvim-lspconfig')
-require('plugs.compe')
+require('plugs.nvim-compe')
+require('plugs.nvim-autopairs')
 require('plugs.lualine')
 require('plugs.nerdtree')
 require('plugs.python-syntax')

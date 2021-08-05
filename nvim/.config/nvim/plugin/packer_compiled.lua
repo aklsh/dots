@@ -69,10 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/auto-pairs"
-  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
@@ -88,6 +84,10 @@ _G.packer_plugins = {
   nerdtree = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nerdtree"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-compe"] = {
     loaded = true,

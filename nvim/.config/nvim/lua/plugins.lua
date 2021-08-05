@@ -42,7 +42,7 @@ return require('packer').startup(
         use "tpope/vim-commentary";
         use "tpope/vim-surround";
         use "google/vim-searchindex";
-        use "jiangmiao/auto-pairs";
+        use "windwp/nvim-autopairs";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
