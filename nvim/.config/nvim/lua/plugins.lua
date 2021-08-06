@@ -50,7 +50,6 @@ return require('packer').startup(
 
         -- Language plugs
         use "vim-python/python-syntax";
-        use "vhda/verilog_systemverilog.vim";
         use "lervag/vimtex";
         use "stevearc/vim-arduino";
         use "editorconfig/editorconfig-vim";

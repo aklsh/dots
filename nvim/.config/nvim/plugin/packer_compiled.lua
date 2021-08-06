@@ -105,10 +105,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/python-syntax"
   },
-  ["verilog_systemverilog.vim"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/verilog_systemverilog.vim"
-  },
   ["vim-arduino"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-arduino"

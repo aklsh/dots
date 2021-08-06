@@ -35,6 +35,7 @@ require('lsp.lua')
 require('lsp.c')
 require('lsp.python')
 require('lsp.tex')
+require('lsp.svls')
 
 -- Local configs
 require('local')
