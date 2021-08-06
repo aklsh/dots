@@ -68,5 +68,3 @@ glb.wildignore = [[
 *.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
 *.swp,.lock,.DS_Store,._*
 ]]
-
-vim.cmd('source ~/.vimrc.local')                                                   -- Sensitive Configs

@@ -30,7 +30,11 @@ require('plugs.vim-gitgutter')
 require('plugs.vim-startify')
 require('plugs.vimtex')
 
+-- LSP servers
 require('lsp.lua')
 require('lsp.c')
 require('lsp.python')
 require('lsp.tex')
+
+-- Local configs
+require('local')
