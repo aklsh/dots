@@ -73,6 +73,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
   },
+  fzf = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/fzf.vim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/gruvbox"
@@ -116,6 +124,10 @@ _G.packer_plugins = {
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-devicons"
+  },
+  ["vim-eunuch"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-eunuch"
   },
   ["vim-fugitive"] = {
     loaded = true,

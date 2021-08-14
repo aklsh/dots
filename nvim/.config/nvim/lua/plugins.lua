@@ -41,6 +41,7 @@ return require('packer').startup(
         -- Some productivity plugs
         use "tpope/vim-commentary";
         use "tpope/vim-surround";
+	use "tpope/vim-eunuch";
         use "google/vim-searchindex";
         use "windwp/nvim-autopairs";
 
@@ -55,16 +56,14 @@ return require('packer').startup(
         use "editorconfig/editorconfig-vim";
 
         -- Navigation
-	use "preservim/nerdtree";
-	use "ryanoasis/vim-devicons";
+        use "preservim/nerdtree";
+        use "ryanoasis/vim-devicons";
         use "hoob3rt/lualine.nvim";
         use "mhinz/vim-startify";
 
         -- -- Fuzzy Finder
-        -- use {"nvim-telescope/telescope.nvim",
-        --      requires = {{"nvim-lua/popup.nvim"},
-        --                  {"nvim-lua/plenary.nvim"}}
-        --     };
+        use {"junegunn/fzf", run = function () vim.fn['fzf#install'](0)	end };
+        use "junegunn/fzf.vim";
 
         -- Working with Git
         use "airblade/vim-gitgutter";
@@ -72,5 +71,7 @@ return require('packer').startup(
 
         -- Themes
         use "morhetz/gruvbox";
+	use{"rose-pine/neovim", as = 'rose-pine'};
+	use "arcticicestudio/nord-vim";
     end
 )

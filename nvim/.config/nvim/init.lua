@@ -29,6 +29,7 @@ require('plugs.python-syntax')
 require('plugs.vim-gitgutter')
 require('plugs.vim-startify')
 require('plugs.vimtex')
+require('plugs.fzf')
 
 -- LSP servers
 require('lsp.lua')

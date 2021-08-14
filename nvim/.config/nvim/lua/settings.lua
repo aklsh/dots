@@ -28,17 +28,14 @@ wnd.nu = true                                                             -- sho
 wnd.rnu = true                                                            -- show other linenumbers relative to current line
 glb.updatetime = 100                                                      -- fast update time to make plugins update faster
 glb.mouse = 'a'                                                           -- allow mouse to be used in all modes
-glb.timeoutlen = 1000
-glb.ttimeoutlen = 100                                                     -- timeout for key-mappings
+glb.ttimeoutlen = 100                                                     -- timeout for keycode sequences
 glb.switchbuf = 'usetab'                                                  -- use existing buffer when opening file again
 glb.swapfile = false                                                      -- get rid of crap - who tf recovers a swp file?
 wnd.signcolumn = 'yes'                                                    -- always show sign column - so that text doesn't shift
 glb.autoread = true                                                       -- automatically update file if changed in another buffer
--- buf.autoindent = true                                                     -- automatically indent lines
 glb.cmdheight = 2                                                         -- default is too less
 glb.splitright = true                                                     -- splits open right
 glb.splitbelow = true                                                     -- splits open below
-glb.showtabline = 2
 glb.shortmess = 'filnxtToOFc'
 
 buf.undofile = true                                                       -- as many undo levels as possible
@@ -54,7 +51,7 @@ vim.cmd('colorscheme gruvbox')                                            -- ult
 
 vim.cmd('autocmd BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++')
 vim.cmd('au TextYankPost * lua vim.highlight.on_yank{timeout=200}')       -- highlight on yank
--- vim.cmd('au BufNewFile,BufRead * if &ft == "" | set ft=text | endif')     -- unknown filetypes = text
+vim.cmd('au BufNewFile,BufEnter * if &filetype == "" | setlocal ft=text | endif')     -- unknown filetypes = text
 
 glb.wildignore = [[
 .git,.hg,.svn
