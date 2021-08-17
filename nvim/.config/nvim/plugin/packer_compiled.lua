@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nerdtree"
   },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nord-vim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
@@ -112,6 +116,10 @@ _G.packer_plugins = {
   ["python-syntax"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/python-syntax"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/rose-pine"
   },
   ["vim-arduino"] = {
     loaded = true,
