@@ -4,7 +4,7 @@ local options = {noremap = true, silent = true}
 
 map('n', '<Leader><Space>', ':Rg<CR>', options)
 map('n', '<Leader>g', ':GFiles?<CR>', options)
-map('n', '<Leader>c', ':Commits<CR>', options)
+map('n', '<Leader>gc', ':Commits<CR>', options)
 map('n', '<Leader>bc', ':BCommits<CR>', options)
 map('n', '<Leader>f', ':Files<CR>', options)
 

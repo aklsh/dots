@@ -30,6 +30,7 @@ require('plugs.vim-gitgutter')
 require('plugs.vim-startify')
 require('plugs.vimtex')
 require('plugs.fzf')
+require('plugs.nvim-cheat')
 
 -- LSP servers
 require('lsp.lua')

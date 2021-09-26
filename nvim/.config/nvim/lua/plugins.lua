@@ -44,6 +44,8 @@ return require('packer').startup(
 	use "tpope/vim-eunuch";
         use "google/vim-searchindex";
         use "windwp/nvim-autopairs";
+	use "RishabhRD/popfix";
+	use "RishabhRD/nvim-cheat.sh";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
@@ -71,7 +73,7 @@ return require('packer').startup(
 
         -- Themes
         use "morhetz/gruvbox";
-	use{"rose-pine/neovim", as = 'rose-pine'};
+	use {"rose-pine/neovim", as = 'rose-pine'};
 	use "arcticicestudio/nord-vim";
     end
 )

@@ -101,6 +101,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
+  ["nvim-cheat.sh"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh"
+  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -112,6 +116,10 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/popfix"
   },
   ["python-syntax"] = {
     loaded = true,
