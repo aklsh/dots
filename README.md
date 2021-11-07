@@ -1,6 +1,6 @@
 # Dots
 
-My dotfiles. Managed with `stow(8)`.
+My dotfiles. Managed with [`stow(8)`](https://linux.die.net/man/8/stow).
 
 # Install
 
