@@ -46,24 +46,28 @@ return require('packer').startup(
         use "windwp/nvim-autopairs";
 	use "RishabhRD/popfix";
 	use "RishabhRD/nvim-cheat.sh";
+	use "nathom/filetype.nvim";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
-        use "hrsh7th/nvim-compe";
+        use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
+	use "github/copilot.vim";
 
         -- Language plugs
         use "vim-python/python-syntax";
         use "lervag/vimtex";
         use "stevearc/vim-arduino";
         use "editorconfig/editorconfig-vim";
+    	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
 
         -- Navigation
         use "preservim/nerdtree";
         use "ryanoasis/vim-devicons";
         use "hoob3rt/lualine.nvim";
         use "mhinz/vim-startify";
+	use 'sunjon/shade.nvim';
 
-        -- -- Fuzzy Finder
+        -- Fuzzy Finder
         use {"junegunn/fzf", run = function () vim.fn['fzf#install'](0)	end };
         use "junegunn/fzf.vim";
 

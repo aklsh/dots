@@ -4,6 +4,7 @@ export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=$HOME/Matlab/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=/usr/lib/cuda-11.2/bin:$PATH
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/aklsh/.oh-my-zsh"

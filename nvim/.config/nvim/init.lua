@@ -31,6 +31,8 @@ require('plugs.vim-startify')
 require('plugs.vimtex')
 require('plugs.fzf')
 require('plugs.nvim-cheat')
+require('plugs.nvim-treesitter')
+require('plugs.shade-nvim')
 
 -- LSP servers
 require('lsp.lua')

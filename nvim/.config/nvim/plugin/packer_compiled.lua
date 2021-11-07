@@ -69,9 +69,17 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/copilot.vim"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
+  },
+  ["filetype.nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/filetype.nvim"
   },
   fzf = {
     loaded = true,
@@ -113,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -128,6 +140,10 @@ _G.packer_plugins = {
   ["rose-pine"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/rose-pine"
+  },
+  ["shade.nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/shade.nvim"
   },
   ["vim-arduino"] = {
     loaded = true,
