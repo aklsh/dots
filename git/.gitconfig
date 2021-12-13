@@ -40,6 +40,7 @@
 [alias]
     amend = commit --amend
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold white)%s%C(reset) %C(white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
 
 # ---------------------------------------------------
 
@@ -68,12 +69,12 @@
 # ---------------------------------------------------
 
 [diff]
-   	guitool = meld
+    guitool = meld
 [difftool]
     prompt = false
 [difftool "meld"]
-   	path = /usr/bin/meld
-   	trustExitCode = false
+    path = /usr/bin/meld
+    trustExitCode = false
 
 # ---------------------------------------------------
 
@@ -90,7 +91,7 @@
 [push]
     default = current
 [pull]
-	rebase = false
+    rebase = false
 
 # ---------------------------------------------------
 

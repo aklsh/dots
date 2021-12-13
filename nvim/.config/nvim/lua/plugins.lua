@@ -79,5 +79,6 @@ return require('packer').startup(
         use "morhetz/gruvbox";
 	use {"rose-pine/neovim", as = 'rose-pine'};
 	use "arcticicestudio/nord-vim";
+	use {"dracula/vim", as = 'dracula'};
     end
 )

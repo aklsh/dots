@@ -72,6 +72,9 @@ plugins=(git
     zsh-completions
     virtualenv
     sudo
+    fd
+    man
+    tmux
     )
 
 source $ZSH/oh-my-zsh.sh

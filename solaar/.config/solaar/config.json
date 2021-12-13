@@ -1,4 +1,23 @@
 {
+  "4055:B789D550": {
+    "_modelId": "405500000000",
+    "_name": "Wireless Mouse M185/M235/M310",
+    "_serial": "B789D550",
+    "_unitId": "B789D550",
+    "divert-keys": {
+      "80": 0,
+      "81": 0,
+      "82": 0
+    },
+    "lowres-smooth-scroll": false,
+    "mouse-gestures": 0,
+    "pointer_speed": 256,
+    "reprogrammable-keys": {
+      "80": 80,
+      "81": 81,
+      "82": 82
+    }
+  },
   "4057:3720ACBD": {
     "_modelId": "405700000000",
     "_name": "Wireless Mouse B330/M330/M331",
@@ -25,5 +44,5 @@
       "82": 82
     }
   },
-  "_version": "1.0.6"
+  "_version": "1.1.0"
 }
