@@ -70,6 +70,7 @@ plugins=(git
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-completions
+    zsh-history-substring-search
     virtualenv
     sudo
     fd
