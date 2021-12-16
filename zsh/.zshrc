@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=$HOME/Matlab/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=/usr/lib/cuda-11.2/bin:$PATH
+export PATH=$HOME/.pyenv/bin:$PATH
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 
 # Path to your oh-my-zsh installation.
@@ -135,6 +136,8 @@ alias luamake=/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake
 
 # Misc auto-appends
 eval "$(direnv hook zsh)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
