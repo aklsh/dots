@@ -15,6 +15,7 @@
 --
 
 -- General
+-- require('impatient')
 require('plugins')
 require('keymaps')
 require('settings')
@@ -40,6 +41,9 @@ require('lsp.c')
 require('lsp.python')
 require('lsp.tex')
 require('lsp.svls')
+require('lsp.arduino')
+require('lsp.java')
 
 -- Local configs
 require('local')
+require('packer_compiled')
