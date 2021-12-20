@@ -12,7 +12,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-
+local compile_path = fn.stdpath('config')..'/lua/packer_compiled.lua'
 
 -- Install packer if not present
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -31,6 +31,7 @@ require('packer').init {
             return require("packer.util").float { border = "single" }
         end,
     },
+    compile_path = compile_path
 }
 
 return require('packer').startup(
@@ -47,6 +48,7 @@ return require('packer').startup(
 	use "RishabhRD/popfix";
 	use "RishabhRD/nvim-cheat.sh";
 	use "nathom/filetype.nvim";
+	use "lewis6991/impatient.nvim";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
