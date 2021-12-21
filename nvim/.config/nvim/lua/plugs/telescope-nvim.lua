@@ -41,7 +41,7 @@ require("telescope").setup {
     path_display = {"absolute"},
     dynamic_preview_title = true,
     file_sorter = sorters.get_fuzzy_file,
-    file_ignore_patterns = {"^.git/"},
+    file_ignore_patterns = {"^.git"},
     generic_sorter = sorters.get_generic_fuzzy_sorter,
     color_devicons = true,
     use_less = true,
@@ -67,6 +67,7 @@ require('telescope').load_extension('packer')
 
 -- mappings
 map("n", "<Leader><Space>", ":Telescope live_grep<CR> ", options)
+map("n", "<Leader>tp", ":Telescope packer<CR> ", options)
 map("n", "<leader>f", ":Telescope git_files<CR>", options)
 map("n", "<Leader>bc", ":Telescope git_bcommits<CR>", options)
 map("n", "<Leader>gc", ":Telescope git_commits<CR>", options)

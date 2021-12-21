@@ -77,8 +77,8 @@ plugins=(git
     fd
     man
     tmux
-    fzf
     forgit
+    fzf-tab
     )
 
 source $ZSH/oh-my-zsh.sh
