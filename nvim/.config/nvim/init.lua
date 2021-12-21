@@ -15,7 +15,7 @@
 --
 
 -- General
--- require('impatient')
+require('impatient')
 require('plugins')
 require('keymaps')
 require('settings')
@@ -33,6 +33,7 @@ require('plugs.vimtex')
 require('plugs.fzf')
 require('plugs.nvim-cheat')
 require('plugs.nvim-treesitter')
+require('plugs.telescope-nvim')
 require('plugs.shade-nvim')
 
 -- LSP servers

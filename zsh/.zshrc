@@ -5,6 +5,7 @@ export PATH=$HOME/Matlab/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=/usr/lib/cuda-11.2/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=$FORGIT_INSTALL_DIR/bin:$PATH
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 
 # Path to your oh-my-zsh installation.
@@ -76,6 +77,8 @@ plugins=(git
     fd
     man
     tmux
+    fzf
+    forgit
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -138,5 +141,4 @@ eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 source ~/.zshrc.local
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

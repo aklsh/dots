@@ -70,8 +70,11 @@ return require('packer').startup(
 	use 'sunjon/shade.nvim';
 
         -- Fuzzy Finder
-        use {"junegunn/fzf", run = function () vim.fn['fzf#install'](0)	end };
-        use "junegunn/fzf.vim";
+	use "nvim-telescope/telescope.nvim";
+	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }
+    	use "nvim-lua/popup.nvim";
+    	use "nvim-lua/plenary.nvim";
+	use "nvim-telescope/telescope-packer.nvim";
 
         -- Working with Git
         use "airblade/vim-gitgutter";
