@@ -21,7 +21,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocompile when there's changes
-vim.cmd 'autocmd BufwritePost plugins.lua PackerCompile'
+vim.cmd('autocmd BufwritePost plugins.lua PackerCompile')
 
 require('packer').init({display = {auto_clean = false}})
 
@@ -41,14 +41,13 @@ return require('packer').startup(
 
         -- Some productivity plugs
         use "tpope/vim-commentary";
-        use "tpope/vim-surround";
+        use "blackCauldron7/surround.nvim";
 	use "tpope/vim-eunuch";
         use "google/vim-searchindex";
         use "windwp/nvim-autopairs";
-	use "RishabhRD/popfix";
-	use "RishabhRD/nvim-cheat.sh";
 	use "nathom/filetype.nvim";
 	use "lewis6991/impatient.nvim";
+	-- use "folke/which-key.nvim";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
@@ -63,11 +62,10 @@ return require('packer').startup(
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
 
         -- Navigation
-        use "preservim/nerdtree";
-        use "ryanoasis/vim-devicons";
+	use "kyazdani42/nvim-tree.lua";
+	use "kyazdani42/nvim-web-devicons";
         use "hoob3rt/lualine.nvim";
-        use "mhinz/vim-startify";
-	use 'sunjon/shade.nvim';
+        use "goolord/alpha-nvim";
 
         -- Fuzzy Finder
 	use "nvim-telescope/telescope.nvim";
@@ -82,8 +80,5 @@ return require('packer').startup(
 
         -- Themes
         use "morhetz/gruvbox";
-	use {"rose-pine/neovim", as = 'rose-pine'};
-	use "arcticicestudio/nord-vim";
-	use {"dracula/vim", as = 'dracula'};
     end
 )

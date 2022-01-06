@@ -69,15 +69,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
-  },
-  dracula = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/dracula",
-    url = "https://github.com/dracula/vim"
   },
   ["editorconfig-vim"] = {
     loaded = true,
@@ -104,25 +104,10 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
-  nerdtree = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/preservim/nerdtree"
-  },
-  ["nord-vim"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nord-vim",
-    url = "https://github.com/arcticicestudio/nord-vim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-cheat.sh"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh",
-    url = "https://github.com/RishabhRD/nvim-cheat.sh"
   },
   ["nvim-compe"] = {
     loaded = true,
@@ -134,10 +119,20 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -149,11 +144,6 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  popfix = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/popfix",
-    url = "https://github.com/RishabhRD/popfix"
-  },
   ["popup.nvim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/popup.nvim",
@@ -164,15 +154,10 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/python-syntax",
     url = "https://github.com/vim-python/python-syntax"
   },
-  ["rose-pine"] = {
+  ["surround.nvim"] = {
     loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
-  },
-  ["shade.nvim"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/shade.nvim",
-    url = "https://github.com/sunjon/shade.nvim"
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/surround.nvim",
+    url = "https://github.com/blackCauldron7/surround.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -199,11 +184,6 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
-  },
   ["vim-eunuch"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-eunuch",
@@ -223,16 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-searchindex",
     url = "https://github.com/google/vim-searchindex"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-startify",
-    url = "https://github.com/mhinz/vim-startify"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
   },
   vimtex = {
     loaded = true,
