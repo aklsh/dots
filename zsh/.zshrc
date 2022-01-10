@@ -92,6 +92,7 @@ plugins=(git
     tmux
     forgit
     fzf-tab
+    celery
     )
 
 source $ZSH/oh-my-zsh.sh
