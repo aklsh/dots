@@ -31,8 +31,8 @@ require('plugs.vimtex')
 require('plugs.nvim-treesitter')
 require('plugs.telescope-nvim')
 require('plugs.surround-nvim')
-require('plugs.alpha')
 require('plugs.nvim-tree')
+require('plugs.rust-tools')
 
 -- LSP servers
 require('lsp.lua')

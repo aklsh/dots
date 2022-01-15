@@ -52,7 +52,7 @@ return require('packer').startup(
         -- LSP plugs
         use "neovim/nvim-lspconfig";
         use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
-	use "github/copilot.vim";
+	-- use "github/copilot.vim";
 
         -- Language plugs
         use "vim-python/python-syntax";
@@ -60,12 +60,13 @@ return require('packer').startup(
         use "stevearc/vim-arduino";
         use "editorconfig/editorconfig-vim";
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
+	use "simrat39/rust-tools.nvim";
 
         -- Navigation
 	use "kyazdani42/nvim-tree.lua";
 	use "kyazdani42/nvim-web-devicons";
         use "hoob3rt/lualine.nvim";
-        use "goolord/alpha-nvim";
+        -- use "goolord/alpha-nvim";
 
         -- Fuzzy Finder
 	use "nvim-telescope/telescope.nvim";
