@@ -39,9 +39,10 @@ require('lsp.lua')
 require('lsp.c')
 require('lsp.python')
 require('lsp.tex')
-require('lsp.svls')
+require('lsp.verilog')
 require('lsp.arduino')
 require('lsp.java')
+require('lsp.rust')
 
 -- Local configs
 require('local')
