@@ -47,7 +47,6 @@ return require('packer').startup(
         use "windwp/nvim-autopairs";
 	use "nathom/filetype.nvim";
 	use "lewis6991/impatient.nvim";
-	-- use "folke/which-key.nvim";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
@@ -63,16 +62,18 @@ return require('packer').startup(
 	use "simrat39/rust-tools.nvim";
 
         -- Navigation
-	use "kyazdani42/nvim-tree.lua";
+    	use "kyazdani42/nvim-tree.lua";
 	use "kyazdani42/nvim-web-devicons";
         use "hoob3rt/lualine.nvim";
-        -- use "goolord/alpha-nvim";
 
         -- Fuzzy Finder
+	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
+	use "junegunn/fzf.vim";
 	use "nvim-telescope/telescope.nvim";
 	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }
-    	use "nvim-lua/popup.nvim";
-    	use "nvim-lua/plenary.nvim";
+       	use "nvim-lua/popup.nvim";
+       	use "nvim-lua/plenary.nvim";
+        use "sudormrfbin/cheatsheet.nvim";
 	use "nvim-telescope/telescope-packer.nvim";
 
         -- Working with Git

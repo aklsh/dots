@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cheatsheet.nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim",
+    url = "https://github.com/sudormrfbin/cheatsheet.nvim"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
@@ -78,6 +83,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/filetype.nvim",
     url = "https://github.com/nathom/filetype.nvim"
+  },
+  fzf = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   gruvbox = {
     loaded = true,
