@@ -1,5 +1,5 @@
 diff --git a/themes/bira.zsh-theme b/themes/bira.zsh-theme
-index 42a70a0..d504201 100644
+index 42a70a0..bd06663 100644
 --- a/themes/bira.zsh-theme
 +++ b/themes/bira.zsh-theme
 @@ -3,30 +3,31 @@ local user_host="%B%(!.%{$fg[red]%}.%{$fg[green]%})%n@%m%{$reset_color%} "
@@ -23,7 +23,7 @@ index 42a70a0..d504201 100644
  ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
  ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 -ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}●%{$fg[yellow]%}"
-+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}●%{$fg[yellow]%}"
++ZSH_THEME_GIT_PROMPT_DIRTY="*%{$fg[yellow]%}"
  ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%}"
 -
 -ZSH_THEME_HG_PROMPT_PREFIX="$ZSH_THEME_GIT_PROMPT_PREFIX"
