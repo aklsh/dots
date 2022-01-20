@@ -13,12 +13,13 @@ function M.on_attach(client, bufnr)
 
   -- Mappings
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gK', ':lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'g?', ':lua vim.lsp.buf.diagnostics()<CR>', opts)
+  buf_set_keymap('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gn', ':lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
 end
 
 return M
