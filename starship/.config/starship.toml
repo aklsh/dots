@@ -1,0 +1,96 @@
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+pyenv_version_name = true
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
+[character]
+success_symbol = "╰─[λ](bold green)"
+error_symbol = "╰─[λ](bold red)"
+
+[hostname]
+ssh_only = false
+format =  "[$hostname](green) "
+disabled = false
+
+[username]
+style_user = "green"
+style_root = "red"
+format = "╭─[$user]($style)@"
+disabled = false
+show_always = true
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
