@@ -12,6 +12,7 @@ symbol = " "
 
 [directory]
 read_only = " "
+style = "bold blue"
 
 [docker_context]
 symbol = " "
@@ -91,6 +92,11 @@ disabled = false
 show_always = true
 
 [git_metrics]
-added_style = "bold blue"
-format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+added_style = "bold green"
+format = '[+$added]($added_style) [-$deleted]($deleted_style) '
 disabled = false
+
+
+[git_status]
+conflicted = "!"
+modified = "*"
