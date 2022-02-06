@@ -1,15 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
-export PATH=/opt/MATLAB/R2021b/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=/usr/lib/cuda-11.2/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
-export PATH=$FORGIT_INSTALL_DIR/bin:$PATH
 export PATH=$PATH:/usr/local/lib/
-export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
 
-TOOLS=/opt/tools
+export TOOLS=/opt/tools
 export PATH=$TOOLS/bluespec/bsc/bin:$PATH
 export PATH=$TOOLS/bluespec/bdw/bin:$PATH
 export PATH=$TOOLS/verilator/bin:$PATH
@@ -22,12 +19,16 @@ export PATH=$TOOLS/magic/bin:$PATH
 export PATH=$TOOLS/kicad/bin:$PATH
 export PATH=$TOOLS/netgen/bin:$PATH
 export PATH=$TOOLS/riscv/bin:$PATH
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export PATH=$TOOLS/ngspice/bin:$PATH
+export PATH=$TOOLS/openocd/bin:$PATH
+export PATH=/opt/MATLAB/R2021b/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/aklsh/.oh-my-zsh"
-export EDITOR="/usr/bin/nvim"
-export BROWSER="/usr/bin/firefox"
+export ZSH=/home/aklsh/.oh-my-zsh
+export EDITOR=/usr/bin/nvim
+export BROWSER=/usr/bin/firefox
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -78,7 +79,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions virtualenv sudo man tmux fzf-tab rust extract colored-man-pages command-not-found systemd docker)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab rust extract colored-man-pages command-not-found systemd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,7 +114,11 @@ alias luamake=/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake
 # Misc auto-appends
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.zshrc.local
+
+# >>>> Vagrant command completion (start)
+fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)

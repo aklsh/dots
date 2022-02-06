@@ -76,8 +76,8 @@ symbol = " "
 symbol = "ﯣ "
 
 [character]
-success_symbol = "╰─[λ](bold green)"
-error_symbol = "╰─[λ](bold red)"
+success_symbol = "╰─[λ](green)"
+error_symbol = "╰─[λ](red)"
 
 [hostname]
 ssh_only = false
@@ -91,12 +91,19 @@ format = "╭─[$user]($style)@"
 disabled = false
 show_always = true
 
-[git_metrics]
-added_style = "bold green"
-format = '[+$added]($added_style) [-$deleted]($deleted_style) '
-disabled = false
-
-
 [git_status]
 conflicted = "!"
 modified = "*"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[](bold red)"
+
+[battery]
+disabled = true
+
+[time]
+disabled = true
+
+[vlang]
+disabled = true
