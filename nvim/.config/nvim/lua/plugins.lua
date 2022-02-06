@@ -60,6 +60,7 @@ return require('packer').startup(
         use "editorconfig/editorconfig-vim";
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
 	use "simrat39/rust-tools.nvim";
+        use "MortenStabenau/matlab-vim";
 
         -- Navigation
     	use "kyazdani42/nvim-tree.lua";
@@ -67,14 +68,14 @@ return require('packer').startup(
         use "hoob3rt/lualine.nvim";
 
         -- Fuzzy Finder
-	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
+    	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
 	use "junegunn/fzf.vim";
 	use "nvim-telescope/telescope.nvim";
 	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }
        	use "nvim-lua/popup.nvim";
        	use "nvim-lua/plenary.nvim";
         use "sudormrfbin/cheatsheet.nvim";
-	use "nvim-telescope/telescope-packer.nvim";
+	    use "nvim-telescope/telescope-packer.nvim";
 
         -- Working with Git
         use "airblade/vim-gitgutter";
