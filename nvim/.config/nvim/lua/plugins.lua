@@ -42,16 +42,17 @@ return require('packer').startup(
         -- Some productivity plugs
         use "tpope/vim-commentary";
         use "blackCauldron7/surround.nvim";
-	use "tpope/vim-eunuch";
+	    use "tpope/vim-eunuch";
         use "google/vim-searchindex";
         use "windwp/nvim-autopairs";
-	use "nathom/filetype.nvim";
-	use "lewis6991/impatient.nvim";
+	    use "nathom/filetype.nvim";
+	    use "lewis6991/impatient.nvim";
+        use "chrisbra/csv.vim";
 
         -- LSP plugs
         use "neovim/nvim-lspconfig";
         use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
-	-- use "github/copilot.vim";
+	    use "github/copilot.vim";
 
         -- Language plugs
         use "vim-python/python-syntax";
@@ -59,19 +60,19 @@ return require('packer').startup(
         use "stevearc/vim-arduino";
         use "editorconfig/editorconfig-vim";
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
-	use "simrat39/rust-tools.nvim";
+	    use "simrat39/rust-tools.nvim";
         use "MortenStabenau/matlab-vim";
 
         -- Navigation
     	use "kyazdani42/nvim-tree.lua";
-	use "kyazdani42/nvim-web-devicons";
+	    use "kyazdani42/nvim-web-devicons";
         use "hoob3rt/lualine.nvim";
 
         -- Fuzzy Finder
     	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
-	use "junegunn/fzf.vim";
-	use "nvim-telescope/telescope.nvim";
-	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }
+	    use "junegunn/fzf.vim";
+	    use "nvim-telescope/telescope.nvim";
+	    use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }
        	use "nvim-lua/popup.nvim";
        	use "nvim-lua/plenary.nvim";
         use "sudormrfbin/cheatsheet.nvim";

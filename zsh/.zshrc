@@ -21,6 +21,7 @@ export PATH=$TOOLS/netgen/bin:$PATH
 export PATH=$TOOLS/riscv/bin:$PATH
 export PATH=$TOOLS/ngspice/bin:$PATH
 export PATH=$TOOLS/openocd/bin:$PATH
+export PATH=$TOOLS/xyce/bin:$PATH
 export PATH=/opt/MATLAB/R2021b/bin:$PATH
 
 # Path to your oh-my-zsh installation.
