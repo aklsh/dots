@@ -41,6 +41,7 @@
     amend = commit --amend
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold white)%s%C(reset) %C(white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
+    dft = difftool
 
 # ---------------------------------------------------
 
@@ -69,12 +70,14 @@
 # ---------------------------------------------------
 
 [diff]
-    guitool = meld
+    external = difft
+    tool = difftastic
 [difftool]
     prompt = false
-[difftool "meld"]
-    path = /usr/bin/meld
-    trustExitCode = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
 
 # ---------------------------------------------------
 
