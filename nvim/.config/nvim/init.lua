@@ -30,9 +30,9 @@ require('plugs.vim-gitgutter')
 require('plugs.vimtex')
 require('plugs.nvim-treesitter')
 require('plugs.telescope-nvim')
-require('plugs.surround-nvim')
 require('plugs.nvim-tree')
 require('plugs.rust-tools')
+require('plugs.pairs')
 
 -- LSP servers
 require('lsp.lua')
