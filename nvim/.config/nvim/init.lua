@@ -33,6 +33,8 @@ require('plugs.telescope-nvim')
 require('plugs.nvim-tree')
 require('plugs.rust-tools')
 require('plugs.pairs')
+require('plugs.matlab-vim')
+-- require('plugs.tmux')
 
 -- LSP servers
 require('lsp.lua')

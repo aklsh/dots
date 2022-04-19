@@ -179,11 +179,6 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
-  ["surround.nvim"] = {
-    loaded = true,
-    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/surround.nvim",
-    url = "https://github.com/blackCauldron7/surround.nvim"
-  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -198,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tmux.nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/tmux.nvim",
+    url = "https://github.com/aserowy/tmux.nvim"
   },
   ["vim-arduino"] = {
     loaded = true,
