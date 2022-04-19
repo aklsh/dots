@@ -22,6 +22,9 @@ export PATH=$TOOLS/riscv/bin:$PATH
 export PATH=$TOOLS/ngspice/bin:$PATH
 export PATH=$TOOLS/openocd/bin:$PATH
 export PATH=$TOOLS/xyce/bin:$PATH
+export PATH=$TOOLS/xilinx/Vitis_HLS/2021.2/bin:$PATH
+export PATH=$TOOLS/xilinx/Model_Composer/2021.2/bin:$PATH
+export PATH=$TOOLS/xilinx/Vivado/2021.2/bin:$PATH
 export PATH=/opt/MATLAB/R2021b/bin:$PATH
 
 # Path to your oh-my-zsh installation.
