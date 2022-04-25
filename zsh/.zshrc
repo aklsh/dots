@@ -112,7 +112,6 @@ export ARCHFLAGS="-arch x86_64"
 #
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
-alias find="fdfind"
 alias luamake=/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake
 
 # Misc auto-appends
@@ -121,8 +120,3 @@ eval "$(pyenv init -)"
 eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.zshrc.local
-
-# >>>> Vagrant command completion (start)
-fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
-compinit
-# <<<<  Vagrant command completion (end)
