@@ -47,28 +47,6 @@ return require('packer').startup(
 	use "nathom/filetype.nvim";
 	use "lewis6991/impatient.nvim";
 	use "chrisbra/csv.vim";
-	use({
-    "aserowy/tmux.nvim",
-    config = function()
-        require("tmux").setup({
-            -- overwrite default configuration
-            -- here, e.g. to enable default bindings
-            copy_sync = {
-                -- enables copy sync and overwrites all register actions to
-                -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
-                enable = true,
-            },
-            navigation = {
-                -- enables default keybindings (C-hjkl) for normal mode
-                enable_default_keybindings = true,
-            },
-            resize = {
-                -- enables default keybindings (A-hjkl) for normal mode
-                enable_default_keybindings = true,
-            }
-        })
-    end
-})
 
         -- LSP plugs
 	use "neovim/nvim-lspconfig";
@@ -91,19 +69,20 @@ return require('packer').startup(
 
         -- Fuzzy Finder
     	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
-	    use "junegunn/fzf.vim";
-	    use "nvim-telescope/telescope.nvim";
-	    use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' }
-       	use "nvim-lua/popup.nvim";
-       	use "nvim-lua/plenary.nvim";
-        use "sudormrfbin/cheatsheet.nvim";
-	    use "nvim-telescope/telescope-packer.nvim";
+	use "junegunn/fzf.vim";
+	use "nvim-telescope/telescope.nvim";
+	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' };
+	use "nvim-lua/popup.nvim";
+	use "nvim-lua/plenary.nvim";
+	use "sudormrfbin/cheatsheet.nvim";
+	use "nvim-telescope/telescope-packer.nvim";
 
-        -- Working with Git
-        use "airblade/vim-gitgutter";
-        use "tpope/vim-fugitive";
+	-- Working with Git
+	-- use "airblade/vim-gitgutter";
+	use "lewis6991/gitsigns.nvim";
+	use "tpope/vim-fugitive";
 
-        -- Themes
-        use "morhetz/gruvbox";
+	-- Themes
+	use "morhetz/gruvbox";
     end
 )
