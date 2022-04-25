@@ -29,11 +29,6 @@
     old = red bold
     new = green bold
     whitespace = red reverse
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
 
 # ---------------------------------------------------
 
@@ -54,30 +49,25 @@
 # ---------------------------------------------------
 
 [core]
+    pager = delta
     excludesfile = ~/.gitignore
     editor = nvim
 
 # ---------------------------------------------------
 
-[merge]
-    tool = meld
-[mergetool]
-    prompt = false
-[mergetool "meld"]
-    path = /usr/bin/meld
-    trustExitCode = false
+[interactive]
+    diffFilter = delta --color-only
 
-# ---------------------------------------------------
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
+    minus-style = syntax "#a0252b"
+    plus-style = syntax "#3b6e43"
 
 [diff]
-    external = difft
-    tool = difftastic
-[difftool]
-    prompt = false
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-    difftool = true
+    colorMoved = default
 
 # ---------------------------------------------------
 
@@ -88,6 +78,8 @@
 
 [url "git@github.com:"]
     insteadOf = gh:
+[url "git@gitlab.com:"]
+    insteadOf = gl:
 
 # ---------------------------------------------------
 
