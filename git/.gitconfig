@@ -57,7 +57,6 @@
 
 [interactive]
     diffFilter = delta --color-only
-
 [delta]
     navigate = true  # use n and N to move between diff sections
     side-by-side = true
@@ -65,7 +64,6 @@
     line-numbers-right-format = "│ "
     minus-style = syntax "#a0252b"
     plus-style = syntax "#3b6e43"
-
 [diff]
     colorMoved = default
 
