@@ -16,7 +16,8 @@ require("telescope").setup {
       "--column",
       "--smart-case",
       "-u",
-      "-u"
+      "--hidden",
+      "--glob=!.git/",
     },
     mappings = {
       i = {
@@ -35,7 +36,7 @@ require("telescope").setup {
     },
     pickers = {
       find_files = {
-        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+        find_command = { "fd", "--type=file", "--hidden", "--smart-case", "--strip-cwd-prefix" }
       }
     },
     path_display = {"absolute"},
@@ -68,7 +69,7 @@ require('telescope').load_extension('packer')
 -- mappings
 map("n", "<Leader><Space>", ":Telescope live_grep<CR> ", options)
 map("n", "<Leader>tp", ":Telescope packer<CR> ", options)
-map("n", "<leader>f", ":Telescope git_files<CR>", options)
-map("n", "<Leader>bc", ":Telescope git_bcommits<CR>", options)
-map("n", "<Leader>gc", ":Telescope git_commits<CR>", options)
+map("n", "<leader>f", ":lua require('plugs.telescope-extensions.files').find_project_files()<CR>", options)
+map("n", "<Leader>bc", ":lua require('plugs.telescope-extensions.delta').my_git_bcommits()<CR>", options)
+map("n", "<Leader>gc", ":lua require('plugs.telescope-extensions.delta').my_git_commits()<CR>", options)
 map("n", "<Leader>bf", ":Telescope current_buffer_fuzzy_find<CR>", options)

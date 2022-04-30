@@ -74,7 +74,6 @@ return require('packer').startup(
     	use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make' };
     	use "nvim-lua/popup.nvim";
     	use "nvim-lua/plenary.nvim";
-    	use "sudormrfbin/cheatsheet.nvim";
     	use "nvim-telescope/telescope-packer.nvim";
 
     	-- Working with Git
