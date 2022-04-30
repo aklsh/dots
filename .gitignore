@@ -1,2 +1,3 @@
 nvim/.config/nvim/lua/local.lua
 scripts/.local/bin/fd
+bashtop/.config/bashtop/error.log
