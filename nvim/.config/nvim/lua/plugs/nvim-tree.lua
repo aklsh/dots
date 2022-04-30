@@ -9,28 +9,31 @@ g.nvim_tree_refresh_wait = 500
 
 map('n', '<F7>', ':NvimTreeToggle<CR>', options)
 map('n', '<S-r>', ':NvimTreeRefresh<CR>', options)
-vim.cmd('highlight NvimTreeFolderIcon guibg=blue')
 
 require'nvim-tree'.setup {
-  indent_markers      = true,
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir = {
+  hijack_directories  = {
     enable = true,
     auto_open = true,
+  },
+  renderer = {
+    indent_markers = {
+	enable = true,
+    },
   },
   actions = {
     open_file = {
       window_picker = {
         enable = true,
-      }
-    }
+      },
+      resize_window = true,
+    },
   },
   diagnostics = {
     enable = false,
@@ -39,7 +42,7 @@ require'nvim-tree'.setup {
       info = "",
       warning = "",
       error = "",
-    }
+    },
   },
   update_focused_file = {
     enable      = false,
@@ -64,7 +67,6 @@ require'nvim-tree'.setup {
     height = 30,
     hide_root_folder = false,
     side = 'right',
-    auto_resize = true,
     mappings = {
       custom_only = false,
       list = {}
@@ -78,3 +80,13 @@ require'nvim-tree'.setup {
     require_confirm = true
   }
 }
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "*" },
+	nested = true,
+	callback = function()
+		if vim.fn.winnr "$" == 1 and vim.fn.bufname() == "NvimTree_" .. vim.fn.tabpagenr() then
+			vim.api.nvim_command ":silent qa!"
+		end
+	end,
+})

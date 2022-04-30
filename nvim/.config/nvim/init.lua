@@ -43,6 +43,7 @@ require('lsp.verilog')
 require('lsp.arduino')
 require('lsp.java')
 require('lsp.rust')
+require('lsp.bash')
 
 -- Local configs
 require('local')
