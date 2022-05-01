@@ -41,8 +41,8 @@ return require('packer').startup(
 
         -- Some productivity plugs
         use "tpope/vim-commentary";
-	    use "tpope/vim-eunuch";
-	    use "google/vim-searchindex";
+	use "tpope/vim-eunuch";
+	use "google/vim-searchindex";
     	use "windwp/nvim-autopairs";
     	use "nathom/filetype.nvim";
     	use "lewis6991/impatient.nvim";
