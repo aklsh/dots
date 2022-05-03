@@ -134,6 +134,21 @@ _G.packer_plugins = {
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-compe",
     url = "https://github.com/hrsh7th/nvim-compe"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -153,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["one-small-step-for-vimkind"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/one-small-step-for-vimkind",
+    url = "https://github.com/jbyuki/one-small-step-for-vimkind"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -178,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

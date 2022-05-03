@@ -33,6 +33,7 @@ require('plugs.nvim-tree')
 require('plugs.rust-tools')
 require('plugs.matlab-vim')
 require('plugs.gitsigns')
+require('plugs.nvim-lua-dap')
 
 -- LSP servers
 require('lsp.lua')

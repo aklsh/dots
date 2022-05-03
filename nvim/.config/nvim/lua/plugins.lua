@@ -48,6 +48,13 @@ return require('packer').startup(
     	use "lewis6991/impatient.nvim";
     	use "chrisbra/csv.vim";
 
+	-- Debugging
+	use "rcarriga/nvim-dap-ui";
+	use "mfussenegger/nvim-dap";
+	use "mfussenegger/nvim-dap-python";
+	use "nvim-telescope/telescope-dap.nvim";
+	use "jbyuki/one-small-step-for-vimkind";
+
         -- LSP plugs
     	use "neovim/nvim-lspconfig";
     	use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
