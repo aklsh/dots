@@ -33,7 +33,7 @@ require('plugs.nvim-tree')
 require('plugs.rust-tools')
 require('plugs.matlab-vim')
 require('plugs.gitsigns')
-require('plugs.nvim-lua-dap')
+require('plugs.nvim-dap-ui')
 
 -- LSP servers
 require('lsp.lua')
@@ -45,6 +45,10 @@ require('lsp.arduino')
 require('lsp.java')
 require('lsp.rust')
 require('lsp.bash')
+
+-- DAP configs
+require('dap.lua')
+require('dap.python')
 
 -- Local configs
 require('local')
