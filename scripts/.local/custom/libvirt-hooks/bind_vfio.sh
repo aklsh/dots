@@ -1,5 +1,18 @@
 #!/bin/bash
 
+ID1="0000:01:00.0"
+ID2="0000:01:00.1"
+ID3="0000:01:00.2"
+ID4="0000:01:00.3"
+
+echo "Unbind GPU from vfio driver"
+sudo sh -c "echo -n $ID1 > /sys/bus/pci/drivers/vfio-pci/unbind" || echo "Failed to unbind $ID1"
+sudo sh -c "echo -n $ID2 > /sys/bus/pci/drivers/vfio-pci/unbind" || echo "Failed to unbind $ID2"
+sudo sh -c "echo -n $ID3 > /sys/bus/pci/drivers/vfio-pci/unbind" || echo "Failed to unbind $ID3"
+sudo sh -c "echo -n $ID4 > /sys/bus/pci/drivers/vfio-pci/unbind" || echo "Failed to unbind $ID4"
+echo "Bind GPU to nvidia driver"
+sudo sh -c "echo -n $ID1 > /sys/bus/pci/drivers/nvidia/bind" || echo "Failed to bind $ID1"
+
 ## Load the config file
 source "/etc/libvirt/hooks/kvm.conf"
 

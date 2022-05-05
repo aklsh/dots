@@ -1,6 +1,7 @@
 #!/bin/bash
 
-VM_ISOLATED_CPUS=0-7
+## Load VM variables
+source "/etc/libvirt/hooks/qemu.d/win10/vm-vars.conf"
 
 ## Isolate CPU cores as per set variable
 systemctl set-property --runtime -- user.slice AllowedCPUs=$VM_ISOLATED_CPUS
