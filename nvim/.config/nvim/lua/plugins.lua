@@ -88,6 +88,7 @@ return require('packer').startup(
     	use "tpope/vim-fugitive";
 
     	-- Themes
-    	use "morhetz/gruvbox";
+	use "morhetz/gruvbox";
+	use "Mofiqul/adwaita.nvim";
     end
 )

@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["adwaita.nvim"] = {
+    loaded = true,
+    path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/adwaita.nvim",
+    url = "https://github.com/Mofiqul/adwaita.nvim"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/aklsh/.local/share/nvim/site/pack/packer/start/copilot.vim",

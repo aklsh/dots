@@ -45,7 +45,7 @@ glb.undoreload = 10000
 glb.undodir = '/home/aklsh/.vim/undodir'
 
 glb.background = 'dark'                                                   -- dark theme
-vim.cmd('colorscheme gruvbox')                                            -- ultimate awesomeness
+vim.cmd('colorscheme adwaita')                                            -- ultimate awesomeness
 
 -- vim.cmd('autocmd BufWritePre *\(^md\)\@<! %s/\s\+$//e')
 -- vim.cmd('autocmd BufWritePre *\(^md\)\@<! %s/\n\+\%$//e')

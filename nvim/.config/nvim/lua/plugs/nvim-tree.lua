@@ -2,9 +2,6 @@ local g = vim.g
 local map = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 
-g.nvim_tree_git_hl = 1
-g.nvim_tree_group_empty = 1
-g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_refresh_wait = 500
 
 map('n', '<F7>', ':NvimTreeToggle<CR>', options)
@@ -12,6 +9,7 @@ map('n', '<S-r>', ':NvimTreeRefresh<CR>', options)
 
 require'nvim-tree'.setup {
   disable_netrw       = true,
+  respect_buf_cwd     = true,
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
@@ -26,6 +24,8 @@ require'nvim-tree'.setup {
     indent_markers = {
 	enable = true,
     },
+    highlight_git = true,
+    group_empty = true,
   },
   actions = {
     open_file = {

@@ -34,6 +34,7 @@ require('plugs.rust-tools')
 require('plugs.matlab-vim')
 require('plugs.gitsigns')
 require('plugs.nvim-dap-ui')
+require('plugs.adwaita')
 
 -- LSP servers
 require('lsp.lua')
