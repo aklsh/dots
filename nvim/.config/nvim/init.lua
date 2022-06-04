@@ -15,7 +15,7 @@
 --
 
 -- General
--- require('impatient')
+require('impatient')
 require('plugins')
 require('keymaps')
 require('settings')

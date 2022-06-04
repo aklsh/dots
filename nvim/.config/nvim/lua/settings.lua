@@ -13,6 +13,8 @@ local g = vim.g
 local glb = vim.o
 local wnd = vim.wo
 local buf = vim.bo
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
 
 glb.errorbells = false                                                    -- no sounds
@@ -45,14 +47,30 @@ glb.undoreload = 10000
 glb.undodir = '/home/aklsh/.vim/undodir'
 
 glb.background = 'dark'                                                   -- dark theme
-vim.cmd('colorscheme adwaita')                                            -- ultimate awesomeness
+vim.cmd[[colorscheme adwaita]]                                            -- ultimate awesomeness
 
--- vim.cmd('autocmd BufWritePre *\(^md\)\@<! %s/\s\+$//e')
--- vim.cmd('autocmd BufWritePre *\(^md\)\@<! %s/\n\+\%$//e')
+-- Remove whitespace on save
+autocmd('BufWritePre', {
+  pattern = '*',
+  command = ":%s/\\s\\+$//e"
+})
 
-vim.cmd('autocmd BufRead,BufNewFile *.ino,*.pde,*.ide set filetype=c++')
-vim.cmd('au TextYankPost * lua vim.highlight.on_yank{timeout=200}')       -- highlight on yank
-vim.cmd('au BufNewFile,BufEnter * if &filetype == "" | setlocal ft=text | endif')     -- unknown filetypes = text
+autocmd('BufRead,BufNewFile', {
+  pattern = '*.ino,*.pde,*.ide',
+  command = "set filetype=c++"
+})
+
+-- Highlight on yank
+autocmd('TextYankPost', {
+  pattern = '*',
+  command = "lua vim.highlight.on_yank{timeout=200}"
+})
+
+-- unknown filetypes = text
+autocmd('BufNewFile,BufEnter', {
+  pattern = '*',
+  command = "if &filetype == '' | setlocal ft=text | endif"
+})
 
 glb.wildignore = [[
 .git,.hg,.svn
