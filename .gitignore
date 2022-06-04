@@ -1,5 +1,6 @@
 nvim/.config/nvim/lua/local.lua
 scripts/.local/bin/fd
+scripts/.local/custom/electric.log
 bashtop/.config/bashtop/error.log
 cargo/.cargo/.package-cache
 cargo/.cargo/bin/
