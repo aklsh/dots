@@ -2,30 +2,18 @@
 export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=/usr/local/go/bin:$PATH
-export PATH=/usr/lib/cuda-11.2/bin:$PATH
+export PATH=/usr/local/cuda-11.6/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=$HOME/.fly/bin:$PATH
+export PATH=$HOME/.juliaup/bin:$PATH
 export PATH=$PATH:/usr/local/lib/
 
-export TOOLS=/opt/tools
-export PATH=$TOOLS/bluespec/bsc/bin:$PATH
-export PATH=$TOOLS/bluespec/bdw/bin:$PATH
-export PATH=$TOOLS/verilator/bin:$PATH
-export PATH=$TOOLS/iverilog/bin:$PATH
-export PATH=$TOOLS/gtkwave/bin:$PATH
-export PATH=$TOOLS/yosys/bin:$PATH
-export PATH=$TOOLS/icestorm/bin:$PATH
-export PATH=$TOOLS/nextpnr/bin:$PATH
-export PATH=$TOOLS/magic/bin:$PATH
-export PATH=$TOOLS/kicad/bin:$PATH
-export PATH=$TOOLS/netgen/bin:$PATH
-export PATH=$TOOLS/riscv/bin:$PATH
-export PATH=$TOOLS/ngspice/bin:$PATH
-export PATH=$TOOLS/openocd/bin:$PATH
-export PATH=$TOOLS/xyce/bin:$PATH
-export PATH=$TOOLS/xilinx/Vitis_HLS/2021.2/bin:$PATH
-export PATH=$TOOLS/xilinx/Model_Composer/2021.2/bin:$PATH
-export PATH=$TOOLS/xilinx/Vivado/2021.2/bin:$PATH
-export PATH=/opt/MATLAB/R2021b/bin:$PATH
+export PATH=/opt/Bluespec/bsc/bin:$PATH
+export PATH=/opt/Bluespec/bdw/bin:$PATH
+export PATH=/RISCV/bin:$PATH
+export PATH=/opt/Xilinx/Vitis_HLS/2021.2/bin:$PATH
+export PATH=/opt/Xilinx/Model_Composer/2021.2/bin:$PATH
+export PATH=/opt/Xilinx/Vivado/2021.2/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/aklsh/.oh-my-zsh
@@ -84,7 +72,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab rust extract colored-man-pages command-not-found systemd)
-
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -115,8 +103,10 @@ alias cat="bat"
 alias luamake=/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake
 
 # Misc auto-appends
+export FLYCTL_INSTALL="/home/aklsh/.fly"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env" # ghcup-env
 source ~/.zshrc.local

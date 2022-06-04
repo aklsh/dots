@@ -1,3 +1,8 @@
 nvim/.config/nvim/lua/local.lua
 scripts/.local/bin/fd
 bashtop/.config/bashtop/error.log
+cargo/.cargo/.package-cache
+cargo/.cargo/bin/
+cargo/.cargo/env
+cargo/.cargo/git/
+cargo/.cargo/registry/
