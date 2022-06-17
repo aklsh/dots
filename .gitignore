@@ -1,3 +1,4 @@
+nvim/.config/nvim/lua/packer_compiled.lua
 nvim/.config/nvim/lua/local.lua
 scripts/.local/bin/fd
 scripts/.local/custom/electric.log
