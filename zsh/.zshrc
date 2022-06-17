@@ -2,7 +2,7 @@
 export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=/usr/local/go/bin:$PATH
-export PATH=/usr/local/cuda-11.6/bin:$PATH
+export PATH=/usr/local/cuda-11.7/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
@@ -71,7 +71,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab rust extract colored-man-pages command-not-found systemd)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab rust extract colored-man-pages command-not-found systemd docker docker-compose)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
