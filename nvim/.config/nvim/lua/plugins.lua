@@ -13,26 +13,36 @@ local execute = vim.api.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local compile_path = fn.stdpath('config')..'/lua/packer_compiled.lua'
+local is_bootstrap = false
 
 -- Install packer if not present
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-    execute 'packadd packer.nvim'
+	is_bootstrap = true
+	execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+	vim.cmd[[packadd packer.nvim]]
 end
 
 -- Autocompile when there's changes
 vim.cmd('autocmd BufwritePost plugins.lua PackerCompile')
 
-require('packer').init({display = {auto_clean = false}})
-
 require('packer').init {
-    display = {
-        open_fn = function()
-            return require("packer.util").float { border = "single" }
-        end,
-    },
-    compile_path = compile_path
+	display = {
+		open_fn = function()
+			return require("packer.util").float { border = "single" }
+		end,
+		auto_clean = false,
+	},
+	compile_path = compile_path
 }
+
+if is_bootstrap then
+    print '=================================='
+    print '    Plugins are being installed'
+    print '    Wait until Packer completes,'
+    print '       then restart nvim'
+    print '=================================='
+    return
+end
 
 return require('packer').startup(
     function(use)
@@ -41,19 +51,21 @@ return require('packer').startup(
 
         -- Some productivity plugs
         use "tpope/vim-commentary";
-	use "tpope/vim-eunuch";
-	use "google/vim-searchindex";
+        use "tpope/vim-eunuch";
+        use "google/vim-searchindex";
     	use "windwp/nvim-autopairs";
     	use "nathom/filetype.nvim";
     	use "lewis6991/impatient.nvim";
     	use "chrisbra/csv.vim";
+	use "lewis6991/spellsitter.nvim";
+	use "direnv/direnv.vim";
 
-	-- Debugging
-	use "rcarriga/nvim-dap-ui";
-	use "mfussenegger/nvim-dap";
-	use "mfussenegger/nvim-dap-python";
-	use "nvim-telescope/telescope-dap.nvim";
-	use "jbyuki/one-small-step-for-vimkind";
+        -- Debugging
+        use "rcarriga/nvim-dap-ui";
+        use "mfussenegger/nvim-dap";
+        use "mfussenegger/nvim-dap-python";
+        use "nvim-telescope/telescope-dap.nvim";
+        use "jbyuki/one-small-step-for-vimkind";
 
         -- LSP plugs
     	use "neovim/nvim-lspconfig";
@@ -66,6 +78,7 @@ return require('packer').startup(
     	use "stevearc/vim-arduino";
     	use "editorconfig/editorconfig-vim";
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
+        use "nvim-treesitter/nvim-treesitter-textobjects";
     	use "simrat39/rust-tools.nvim";
     	use "MortenStabenau/matlab-vim";
 
@@ -73,6 +86,7 @@ return require('packer').startup(
     	use "kyazdani42/nvim-tree.lua";
     	use "kyazdani42/nvim-web-devicons";
     	use "hoob3rt/lualine.nvim";
+        use "simrat39/symbols-outline.nvim";
 
         -- Fuzzy Finder
     	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
@@ -88,7 +102,10 @@ return require('packer').startup(
     	use "tpope/vim-fugitive";
 
     	-- Themes
-	use "morhetz/gruvbox";
-	use "Mofiqul/adwaita.nvim";
+        use "morhetz/gruvbox";
+        use "Mofiqul/adwaita.nvim";
+        if is_bootstrap then
+            require('packer').sync()
+        end
     end
 )

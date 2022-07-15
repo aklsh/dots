@@ -35,6 +35,8 @@ require('plugs.matlab-vim')
 require('plugs.gitsigns')
 require('plugs.nvim-dap-ui')
 require('plugs.adwaita')
+require('plugs.symbols-outline')
+require('plugs.spellsitter')
 
 -- LSP servers
 require('lsp.lua')
