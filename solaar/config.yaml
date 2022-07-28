@@ -1,0 +1,17 @@
+- 1.1.4
+- _NAME: Wireless Mouse B330/M330/M331
+  _absent: [hi-res-scroll, hires-smooth-invert, hires-smooth-resolution, smart-shift, thumb-scroll-mode, thumb-scroll-invert, onboard_profiles, report_rate,
+    dpi, dpi-sliding, speed-change, backlight, backlight-timed, fn-swap, persistent-remappable-keys, disable-keyboard-keys, divert-crown, crown-smooth,
+    divert-gkeys, m-key-leds, mr-key-led, multiplatform, change-host, gesture2-gestures, gesture2-divert, gesture2-params, hires-scroll-mode, sidetone,
+    equalizer]
+  _modelId: '405700000000'
+  _sensitive: {lowres-scroll-mode: false, mouse-gestures: false, pointer_speed: false}
+  _serial: 3720ACBD
+  _unitId: 3720ACBD
+  _wpid: '4057'
+  divert-keys: {80: 0, 81: 0, 82: 0}
+  lowres-scroll-mode: false
+  lowres-smooth-scroll: false
+  mouse-gestures: 0
+  pointer_speed: 256
+  reprogrammable-keys: {80: 80, 81: 81, 82: 82}
