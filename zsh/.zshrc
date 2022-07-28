@@ -8,13 +8,6 @@ export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
 export PATH=$PATH:/usr/local/lib/
 
-export PATH=/opt/Bluespec/bsc/bin:$PATH
-export PATH=/opt/Bluespec/bdw/bin:$PATH
-export PATH=/RISCV/bin:$PATH
-export PATH=/opt/Xilinx/Vitis_HLS/2021.2/bin:$PATH
-export PATH=/opt/Xilinx/Model_Composer/2021.2/bin:$PATH
-export PATH=/opt/Xilinx/Vivado/2021.2/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=/home/aklsh/.oh-my-zsh
 export EDITOR=/usr/bin/nvim
