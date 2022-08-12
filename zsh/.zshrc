@@ -103,3 +103,5 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env" # ghcup-env
 source ~/.zshrc.local
+
+[[ -s "/home/aklsh/.gvm/scripts/gvm" ]] && source "/home/aklsh/.gvm/scripts/gvm"
