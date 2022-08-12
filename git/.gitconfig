@@ -37,6 +37,7 @@
     lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold white)%s%C(reset) %C(white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
     dft = difftool
+    conv-commit = "!sh conventional-commit"
 
 # ---------------------------------------------------
 
@@ -107,5 +108,3 @@
 
 [include]
     path = ~/.gitconfig.local
-[gui]
-	recentrepo = /home/aklsh/dots
