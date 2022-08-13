@@ -6,6 +6,7 @@ export PATH=/usr/local/cuda-11.7/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 export PATH=$PATH:/usr/local/lib/
 
 # Path to your oh-my-zsh installation.
