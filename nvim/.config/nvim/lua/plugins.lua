@@ -57,7 +57,6 @@ return require('packer').startup(
     	use "nathom/filetype.nvim";
     	use "lewis6991/impatient.nvim";
     	use "chrisbra/csv.vim";
-	use "lewis6991/spellsitter.nvim";
 	use "direnv/direnv.vim";
 
         -- Debugging
@@ -70,7 +69,6 @@ return require('packer').startup(
         -- LSP plugs
     	use "neovim/nvim-lspconfig";
     	use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
-    	use "github/copilot.vim";
 
         -- Language plugs
     	use "vim-python/python-syntax";
@@ -81,6 +79,7 @@ return require('packer').startup(
         use "nvim-treesitter/nvim-treesitter-textobjects";
     	use "simrat39/rust-tools.nvim";
     	use "MortenStabenau/matlab-vim";
+	use "mtikekar/vim-bsv";
 
         -- Navigation
     	use "kyazdani42/nvim-tree.lua";
@@ -102,8 +101,8 @@ return require('packer').startup(
     	use "tpope/vim-fugitive";
 
     	-- Themes
-        use "morhetz/gruvbox";
         use "Mofiqul/adwaita.nvim";
+
         if is_bootstrap then
             require('packer').sync()
         end

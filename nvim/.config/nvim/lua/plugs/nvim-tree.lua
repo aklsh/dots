@@ -8,7 +8,7 @@ map('n', '<F7>', ':NvimTreeToggle<CR>', options)
 map('n', '<S-r>', ':NvimTreeRefresh<CR>', options)
 
 require'nvim-tree'.setup {
-  disable_netrw       = true,
+  disable_netrw       = false,
   respect_buf_cwd     = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -24,7 +24,7 @@ require'nvim-tree'.setup {
     indent_markers = {
 	enable = true,
     },
-    highlight_git = true,
+    highlight_git = false,
     group_empty = true,
   },
   actions = {

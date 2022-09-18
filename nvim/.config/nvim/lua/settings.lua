@@ -107,7 +107,7 @@ g.loaded_matchparen = 0
 g.loaded_logiPat = 0
 g.loaded_rrhelper = 0
 
-g.loaded_netrw = 0
-g.loaded_netrwPlugin = 0
-g.loaded_netrwSettings = 0
-g.loaded_netrwFileHandlers = 0
+-- g.loaded_netrw = 0
+-- g.loaded_netrwPlugin = 0
+-- g.loaded_netrwSettings = 0
+-- g.loaded_netrwFileHandlers = 0

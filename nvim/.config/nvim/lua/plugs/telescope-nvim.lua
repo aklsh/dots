@@ -7,6 +7,7 @@ local previewers = require('telescope.previewers')
 
 require("telescope").setup {
   defaults = {
+    initial_mode = "insert",
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -42,7 +43,7 @@ require("telescope").setup {
     path_display = {"absolute"},
     dynamic_preview_title = true,
     file_sorter = sorters.get_fuzzy_file,
-    file_ignore_patterns = {"^.git"},
+    file_ignore_patterns = {"^.git", "^.ccls-cache"},
     generic_sorter = sorters.get_generic_fuzzy_sorter,
     color_devicons = true,
     use_less = true,
@@ -50,8 +51,6 @@ require("telescope").setup {
     file_previewer = previewers.vim_buffer_cat.new,
     grep_previewer = previewers.vim_buffer_vimgrep.new,
     qflist_previewer = previewers.vim_buffer_qflist.new,
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = previewers.buffer_previewer_maker
   },
   extensions = {
     fzf = {
@@ -68,8 +67,8 @@ require('telescope').load_extension('packer')
 require('telescope').load_extension('dap')
 
 -- mappings
-map("n", "<Leader><Space>", ":Telescope live_grep<CR> ", options)
-map("n", "<Leader>tp", ":Telescope packer<CR> ", options)
+map("n", "<Leader><Space>", ":Telescope live_grep<CR>", options)
+map("n", "<Leader>tp", ":Telescope packer<CR>", options)
 map("n", "<leader>f", ":lua require('plugs.telescope-extensions.files').find_project_files()<CR>", options)
 map("n", "<Leader>bc", ":lua require('plugs.telescope-extensions.delta').my_git_bcommits()<CR>", options)
 map("n", "<Leader>gc", ":lua require('plugs.telescope-extensions.delta').my_git_commits()<CR>", options)

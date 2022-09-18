@@ -36,7 +36,7 @@ require('plugs.gitsigns')
 require('plugs.nvim-dap-ui')
 require('plugs.adwaita')
 require('plugs.symbols-outline')
-require('plugs.spellsitter')
+require('plugs.vim-tmux-navigator')
 
 -- LSP servers
 require('lsp.lua')
