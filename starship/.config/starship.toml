@@ -107,3 +107,8 @@ disabled = true
 
 [vlang]
 disabled = true
+
+[localip]
+ssh_only = true
+format = "@[$localipv4](bold red) "
+disabled = false

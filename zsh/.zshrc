@@ -16,6 +16,8 @@ export BROWSER=/usr/bin/firefox
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
+export STARSHIP_CACHE=~/.starship/cache
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -84,7 +86,7 @@ else
 fi
 
 # Compilation flags
-export MAKEFLAGS="-j13"
+export MAKEFLAGS="-j13 --warn-undefined-variables"
 export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -102,7 +104,6 @@ eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env" # ghcup-env
-source ~/.zshrc.local
-
+[ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env"
 [[ -s "/home/aklsh/.gvm/scripts/gvm" ]] && source "/home/aklsh/.gvm/scripts/gvm"
+source ~/.zshrc.local
