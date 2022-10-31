@@ -2,12 +2,11 @@
 export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
 export PATH=/usr/bin/vendor_perl:$PATH
 export PATH=/usr/local/go/bin:$PATH
-export PATH=/usr/local/cuda-11.7/bin:$PATH
+export PATH=/usr/local/cuda-11/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
-export PATH=$PATH:/usr/local/lib/
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/aklsh/.oh-my-zsh
@@ -96,7 +95,7 @@ export ARCHFLAGS="-arch x86_64"
 #
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
-alias luamake=/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake
+alias luamake="/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake"
 
 # Misc auto-appends
 export FLYCTL_INSTALL="/home/aklsh/.fly"
@@ -106,4 +105,6 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env"
 [[ -s "/home/aklsh/.gvm/scripts/gvm" ]] && source "/home/aklsh/.gvm/scripts/gvm"
+
+# Source local configs
 source ~/.zshrc.local
