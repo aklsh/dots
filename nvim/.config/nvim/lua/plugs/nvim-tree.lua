@@ -80,7 +80,8 @@ require'nvim-tree'.setup {
   }
 }
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
+local autocmd = vim.api.nvim_create_autocmd
+autocmd({ "BufEnter" }, {
   pattern = { "*" },
   nested = true,
   callback = function()

@@ -51,12 +51,9 @@ return require('packer').startup(
 
         -- Some productivity plugs
         use "tpope/vim-commentary";
-        use "tpope/vim-eunuch";
         use "google/vim-searchindex";
     	use "windwp/nvim-autopairs";
-    	use "nathom/filetype.nvim";
     	use "lewis6991/impatient.nvim";
-    	use "chrisbra/csv.vim";
 	use "direnv/direnv.vim";
 
         -- Debugging
@@ -65,10 +62,12 @@ return require('packer').startup(
         use "mfussenegger/nvim-dap-python";
         use "nvim-telescope/telescope-dap.nvim";
         use "jbyuki/one-small-step-for-vimkind";
+	use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"};
 
         -- LSP plugs
     	use "neovim/nvim-lspconfig";
     	use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
+	use "folke/lsp-colors.nvim";
 
         -- Language plugs
     	use "vim-python/python-syntax";
@@ -85,7 +84,6 @@ return require('packer').startup(
     	use "kyazdani42/nvim-tree.lua";
     	use "kyazdani42/nvim-web-devicons";
     	use "hoob3rt/lualine.nvim";
-        use "simrat39/symbols-outline.nvim";
 
         -- Fuzzy Finder
     	use {"junegunn/fzf", run = function () vim.fn["fzf#install"](0)	end };
