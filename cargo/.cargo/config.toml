@@ -2,7 +2,7 @@
 jobs = 13                      # number of parallel jobs, defaults to # of CPUs
 
 [install]
-root = ".local"                # `cargo install` destination directory
+root = "/home/aklsh/.local"    # `cargo install` destination directory
 
 [cargo-new]
 vcs = "git"                    # VCS to use ('git', 'hg', 'pijul', 'fossil', 'none')
