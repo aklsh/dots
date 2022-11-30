@@ -13,6 +13,7 @@ export ZSH=/home/aklsh/.oh-my-zsh
 export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/firefox
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export CARGO_HOME=~/.local
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 export STARSHIP_CACHE=~/.starship/cache
@@ -66,7 +67,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab rust extract colored-man-pages command-not-found systemd docker docker-compose)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab extract colored-man-pages systemd docker docker-compose)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
