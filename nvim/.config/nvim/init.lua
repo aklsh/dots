@@ -31,11 +31,13 @@ require('plugs.nvim-treesitter')
 require('plugs.telescope-nvim')
 require('plugs.nvim-tree')
 require('plugs.rust-tools')
-require('plugs.matlab-vim')
 require('plugs.gitsigns')
 require('plugs.nvim-dap-ui')
 require('plugs.adwaita')
 require('plugs.trouble-nvim')
+require('plugs.mason')
+require('plugs.mason-lspconfig')
+require('plugs.fidget')
 
 -- LSP servers
 require('lsp.lua')
@@ -43,14 +45,8 @@ require('lsp.c')
 require('lsp.python')
 require('lsp.tex')
 require('lsp.verilog')
-require('lsp.arduino')
-require('lsp.java')
 require('lsp.rust')
 require('lsp.bash')
-
--- DAP configs
-require('dap.lua')
-require('dap.python')
 
 -- Local configs
 require('local')

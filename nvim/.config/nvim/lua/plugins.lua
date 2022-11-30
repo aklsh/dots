@@ -66,6 +66,9 @@ return require('packer').startup(
 
         -- LSP plugs
     	use "neovim/nvim-lspconfig";
+	use "williamboman/mason.nvim";
+	use "williamboman/mason-lspconfig.nvim";
+	use "j-hui/fidget.nvim";
     	use "hrsh7th/nvim-compe"; -- TODO: Change to nvim-cmp
 	use "folke/lsp-colors.nvim";
 
@@ -75,10 +78,10 @@ return require('packer').startup(
     	use "stevearc/vim-arduino";
     	use "editorconfig/editorconfig-vim";
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
-        use "nvim-treesitter/nvim-treesitter-textobjects";
+        use {"nvim-treesitter/nvim-treesitter-textobjects", after = 'nvim-treesitter'};
     	use "simrat39/rust-tools.nvim";
-    	use "MortenStabenau/matlab-vim";
 	use "mtikekar/vim-bsv";
+	use "terrastruct/d2-vim";
 
         -- Navigation
     	use "kyazdani42/nvim-tree.lua";
@@ -96,6 +99,7 @@ return require('packer').startup(
 
     	-- Working with Git
     	use "lewis6991/gitsigns.nvim";
+	use "tpope/vim-rhubarb";
     	use "tpope/vim-fugitive";
 
     	-- Themes
