@@ -9,6 +9,4 @@ include:
 - template: Jobs/Secret-Detection.gitlab-ci.yml
 secret_detection:
   variables:
-    SECRET_DETECTION_HISTORIC_SCAN: "true"
     SECRET_DETECTION_IMAGE_SUFFIX: '-fips'
-    GIT_DEPTH: 500
