@@ -56,14 +56,6 @@ return require('packer').startup(
     	use "lewis6991/impatient.nvim";
 	use "direnv/direnv.vim";
 
-        -- Debugging
-        use "rcarriga/nvim-dap-ui";
-        use "mfussenegger/nvim-dap";
-        use "mfussenegger/nvim-dap-python";
-        use "nvim-telescope/telescope-dap.nvim";
-        use "jbyuki/one-small-step-for-vimkind";
-	use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"};
-
         -- LSP plugs
     	use "neovim/nvim-lspconfig";
 	use "williamboman/mason.nvim";
@@ -73,15 +65,11 @@ return require('packer').startup(
 	use "folke/lsp-colors.nvim";
 
         -- Language plugs
-    	use "vim-python/python-syntax";
     	use "lervag/vimtex";
-    	use "stevearc/vim-arduino";
     	use "editorconfig/editorconfig-vim";
     	use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'};
         use {"nvim-treesitter/nvim-treesitter-textobjects", after = 'nvim-treesitter'};
     	use "simrat39/rust-tools.nvim";
-	use "mtikekar/vim-bsv";
-	use "terrastruct/d2-vim";
 
         -- Navigation
     	use "kyazdani42/nvim-tree.lua";

@@ -64,7 +64,6 @@ require("telescope").setup {
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('packer')
-require('telescope').load_extension('dap')
 
 -- mappings
 map("n", "<Leader><Space>", ":Telescope live_grep<CR>", options)
