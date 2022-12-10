@@ -7,6 +7,9 @@ export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.codon/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/aklsh/.oh-my-zsh
@@ -106,6 +109,7 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env"
 [[ -s "/home/aklsh/.gvm/scripts/gvm" ]] && source "/home/aklsh/.gvm/scripts/gvm"
+if [ -e /home/aklsh/.nix-profile/etc/profile.d/nix.sh ]; then . /home/aklsh/.nix-profile/etc/profile.d/nix.sh; fi
 
 # Source local configs
 source ~/.zshrc.local
