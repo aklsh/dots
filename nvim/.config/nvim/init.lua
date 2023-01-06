@@ -37,13 +37,14 @@ require('plugs.mason-lspconfig')
 require('plugs.fidget')
 
 -- LSP servers
-require('lsp.lua')
-require('lsp.c')
-require('lsp.python')
-require('lsp.tex')
-require('lsp.verilog')
-require('lsp.rust')
-require('lsp.bash')
+require('lsp.mason')
+-- require('lsp.lua')
+-- require('lsp.c')
+-- require('lsp.python')
+-- require('lsp.tex')
+-- require('lsp.verilog')
+-- require('lsp.rust')
+-- require('lsp.bash')
 
 -- Local configs
 require('local')

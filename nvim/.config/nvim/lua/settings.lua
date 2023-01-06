@@ -49,11 +49,11 @@ glb.undodir = '/home/aklsh/.vim/undodir'
 glb.background = 'dark'                                                   -- dark theme
 vim.cmd[[colorscheme adwaita]]                                            -- ultimate awesomeness
 
--- Remove whitespace on save
-autocmd('BufWritePre', {
-  pattern = '*',
-  command = ":%s/\\s\\+$//e"
-})
+-- -- Remove whitespace on save
+-- autocmd('BufWritePre', {
+--   pattern = '*',
+--   command = ":%s/\\s\\+$//e"
+-- })
 
 autocmd('BufRead,BufNewFile', {
   pattern = '*.ino,*.pde,*.ide',

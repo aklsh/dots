@@ -1,5 +1,8 @@
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"c", "cpp", "python", "latex", "verilog", "lua", "rust", "html", "css", "javascript", "go"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  autotag = {
+    enable = true,
+  },
   highlight = {
     enable = true,              -- false will disable the whole extension
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
