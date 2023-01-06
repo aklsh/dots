@@ -106,10 +106,12 @@ export FLYCTL_INSTALL="/home/aklsh/.fly"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "/home/aklsh/.ghcup/env" ] && source "/home/aklsh/.ghcup/env"
-[[ -s "/home/aklsh/.gvm/scripts/gvm" ]] && source "/home/aklsh/.gvm/scripts/gvm"
-if [ -e /home/aklsh/.nix-profile/etc/profile.d/nix.sh ]; then . /home/aklsh/.nix-profile/etc/profile.d/nix.sh; fi
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+
+if [ -e "$HOME/.shellfishrc" ]; then source "$HOME/.shellfishrc"; fi
 
 # Source local configs
-source ~/.zshrc.local
+source $HOME/.zshrc.local
