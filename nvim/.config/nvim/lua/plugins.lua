@@ -72,8 +72,8 @@ return require('packer').startup(
     	use "simrat39/rust-tools.nvim";
 
         -- Navigation
-    	use "kyazdani42/nvim-tree.lua";
-    	use "kyazdani42/nvim-web-devicons";
+    	use "nvim-tree/nvim-tree.lua";
+    	use "nvim-tree/nvim-web-devicons";
     	use "hoob3rt/lualine.nvim";
 
         -- Fuzzy Finder
