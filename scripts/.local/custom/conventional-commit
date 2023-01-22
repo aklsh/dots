@@ -1,5 +1,5 @@
 #!/bin/sh
-TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+TYPE=$(gum choose "build" "change" "chore" "ci" "docs" "feat" "fix" "perf" "refactor" "remove" "revert" "security" "style" "test")
 SCOPE=$(gum input --placeholder "scope")
 
 # Since the scope is optional, wrap it in parentheses if it has a value.
