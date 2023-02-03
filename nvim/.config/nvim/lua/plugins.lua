@@ -92,6 +92,7 @@ return require('packer').startup(
 
     	-- Themes
         use "Mofiqul/adwaita.nvim";
+	use "tjdevries/colorbuddy.nvim";
 
         if is_bootstrap then
             require('packer').sync()
