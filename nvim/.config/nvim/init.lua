@@ -35,16 +35,7 @@ require('plugs.adwaita')
 require('plugs.mason')
 require('plugs.mason-lspconfig')
 require('plugs.fidget')
-
--- LSP servers
-require('lsp.mason')
--- require('lsp.lua')
--- require('lsp.c')
--- require('lsp.python')
--- require('lsp.tex')
--- require('lsp.verilog')
--- require('lsp.rust')
--- require('lsp.bash')
+require('plugs.formatter-nvim')
 
 -- Local configs
 require('local')

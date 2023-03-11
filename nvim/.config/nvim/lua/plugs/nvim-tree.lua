@@ -1,28 +1,28 @@
 local g = vim.g
 local map = vim.api.nvim_set_keymap
-local options = {noremap = true, silent = true}
+local options = { noremap = true, silent = true }
 
 g.nvim_tree_refresh_wait = 500
 
-map('n', '<F7>', ':NvimTreeToggle<CR>', options)
-map('n', '<S-r>', ':NvimTreeRefresh<CR>', options)
+map("n", "<F7>", ":NvimTreeToggle<CR>", options)
+map("n", "<S-r>", ":NvimTreeRefresh<CR>", options)
 
-require'nvim-tree'.setup {
-  disable_netrw       = false,
-  respect_buf_cwd     = true,
-  hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
-  open_on_tab         = false,
-  hijack_cursor       = false,
-  update_cwd          = false,
-  hijack_directories  = {
+require("nvim-tree").setup({
+  disable_netrw = false,
+  respect_buf_cwd = true,
+  hijack_netrw = true,
+  open_on_setup = false,
+  ignore_ft_on_setup = {},
+  open_on_tab = false,
+  hijack_cursor = false,
+  update_cwd = false,
+  hijack_directories = {
     enable = true,
     auto_open = true,
   },
   renderer = {
     indent_markers = {
-	enable = true,
+      enable = true,
     },
     highlight_git = false,
     group_empty = true,
@@ -45,17 +45,17 @@ require'nvim-tree'.setup {
     },
   },
   update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
+    enable = false,
+    update_cwd = false,
+    ignore_list = {},
   },
   system_open = {
-    cmd  = nil,
-    args = {}
+    cmd = nil,
+    args = {},
   },
   filters = {
     dotfiles = false,
-    custom = {}
+    custom = {},
   },
   git = {
     enable = true,
@@ -65,28 +65,28 @@ require'nvim-tree'.setup {
   view = {
     adaptive_size = true,
     hide_root_folder = false,
-    side = 'right',
+    side = "right",
     mappings = {
       custom_only = false,
-      list = {}
+      list = {},
     },
     number = false,
     relativenumber = false,
-    signcolumn = "no"
+    signcolumn = "no",
   },
   trash = {
     cmd = "trash",
-    require_confirm = true
-  }
-}
+    require_confirm = true,
+  },
+})
 
 local autocmd = vim.api.nvim_create_autocmd
 autocmd({ "BufEnter" }, {
   pattern = { "*" },
   nested = true,
   callback = function()
-    if vim.fn.winnr "$" == 1 and vim.fn.bufname() == "NvimTree_" .. vim.fn.tabpagenr() then
-      vim.api.nvim_command ":silent qa!"
+    if vim.fn.winnr("$") == 1 and vim.fn.bufname() == "NvimTree_" .. vim.fn.tabpagenr() then
+      vim.api.nvim_command(":silent qa!")
     end
   end,
 })

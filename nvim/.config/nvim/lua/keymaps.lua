@@ -9,9 +9,8 @@
 --
 
 -- Some sanity
-local options = {noremap = true, silent = true}
+local options = { noremap = true, silent = true }
 local map = vim.api.nvim_set_keymap
-
 
 -- Normal mode
 map("n", "j", "gj", options)
