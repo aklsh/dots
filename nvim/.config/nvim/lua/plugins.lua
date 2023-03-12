@@ -11,6 +11,7 @@
 -- Some sanity
 local execute = vim.api.nvim_command
 local fn = vim.fn
+local cmd = vim.cmd
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local compile_path = fn.stdpath("config") .. "/lua/packer_compiled.lua"
 local is_bootstrap = false
@@ -19,11 +20,11 @@ local is_bootstrap = false
 if fn.empty(fn.glob(install_path)) > 0 then
   is_bootstrap = true
   execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-  vim.cmd([[packadd packer.nvim]])
+  cmd([[packadd packer.nvim]])
 end
 
 -- Autocompile when there's changes
-vim.cmd("autocmd BufwritePost plugins.lua PackerCompile")
+cmd("autocmd BufwritePost plugins.lua PackerCompile")
 
 require("packer").init({
   display = {
@@ -80,7 +81,7 @@ return require("packer").startup(function(use)
   use({
     "junegunn/fzf",
     run = function()
-      vim.fn["fzf#install"](0)
+      fn["fzf#install"](0)
     end,
   })
   use("junegunn/fzf.vim")

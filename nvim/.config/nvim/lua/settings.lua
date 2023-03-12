@@ -13,6 +13,7 @@ local g = vim.g
 local glb = vim.o
 local wnd = vim.wo
 local buf = vim.bo
+local cmd = vim.cmd
 local autocmd = vim.api.nvim_create_autocmd
 
 glb.errorbells = false -- no sounds
@@ -45,14 +46,14 @@ glb.undoreload = 10000
 glb.undodir = "/home/aklsh/.vim/undodir"
 
 glb.background = "dark" -- dark theme
-vim.cmd([[colorscheme adwaita]]) -- ultimate awesomeness
+cmd.colorscheme("adwaita") -- ultimate awesomeness
 
 -- Remove whitespace on save
 autocmd("BufWritePre", {
   pattern = "*",
   callback = function()
-    if vim.bo.filetype ~= "markdown" then
-      vim.cmd([[%s/\s\+$//e]])
+    if buf.filetype ~= "markdown" then
+      cmd([[%s/\s\+$//e]])
     end
   end,
 })
