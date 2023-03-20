@@ -58,14 +58,10 @@ autocmd("BufWritePre", {
   end,
 })
 
+-- Automatically format on save
 autocmd("BufWritePost", {
   pattern = "*",
   command = "FormatWrite",
-})
-
-autocmd("BufRead,BufNewFile", {
-  pattern = "*.ino,*.pde,*.ide",
-  command = "set filetype=c++",
 })
 
 -- Highlight on yank
