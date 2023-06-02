@@ -75,7 +75,7 @@ return require("packer").startup(function(use)
   -- Navigation
   use("nvim-tree/nvim-tree.lua")
   use("nvim-tree/nvim-web-devicons")
-  use("hoob3rt/lualine.nvim")
+  use("nvim-lualine/lualine.nvim")
 
   -- Fuzzy Finder
   use({

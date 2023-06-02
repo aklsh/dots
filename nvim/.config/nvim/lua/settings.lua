@@ -39,6 +39,7 @@ glb.cmdheight = 2 -- default is too less
 glb.splitright = true -- splits open right
 glb.splitbelow = true -- splits open below
 glb.shortmess = "filnxtToOFc"
+glb.fillchars = "stl: " -- current window statusline fill character
 
 buf.undofile = true -- as many undo levels as possible
 buf.undolevels = 1000
