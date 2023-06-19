@@ -60,7 +60,7 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig")
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
-  use("j-hui/fidget.nvim")
+  use({"j-hui/fidget.nvim", tag = "legacy"})
   use("hrsh7th/nvim-compe") -- TODO: Change to nvim-cmp
   use("folke/lsp-colors.nvim")
   use("mhartington/formatter.nvim")
