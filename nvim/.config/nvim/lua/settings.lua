@@ -18,7 +18,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 glb.errorbells = false -- no sounds
 glb.termguicolors = true -- Terminal colors
-glb.clipboard = [[unnamed,unnamedplus]] -- Copy to/from system clipboard
+glb.clipboard = "unnamedplus" -- Copy to/from system clipboard
 glb.ruler = true -- show cursor co-ordinates
 glb.incsearch = true -- show partial search hits
 glb.hlsearch = false -- don't highlight search results

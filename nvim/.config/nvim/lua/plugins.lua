@@ -60,8 +60,18 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig")
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
-  use({"j-hui/fidget.nvim", tag = "legacy"})
-  use("hrsh7th/nvim-compe") -- TODO: Change to nvim-cmp
+  use({ "j-hui/fidget.nvim", tag = "legacy" })
+  -- use("hrsh7th/nvim-compe") -- TODO: Change to nvim-cmp
+  use("hrsh7th/nvim-cmp") -- TODO: Change to nvim-cmp
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("f3fora/cmp-spell")
+  use("hrsh7th/cmp-calc")
+  use("hrsh7th/cmp-emoji")
+  use("onsails/lspkind-nvim")
+
   use("folke/lsp-colors.nvim")
   use("mhartington/formatter.nvim")
 
@@ -99,6 +109,8 @@ return require("packer").startup(function(use)
   -- Themes
   use("Mofiqul/adwaita.nvim")
   use("tjdevries/colorbuddy.nvim")
+
+  use("esensar/nvim-dev-container")
 
   if is_bootstrap then
     require("packer").sync()

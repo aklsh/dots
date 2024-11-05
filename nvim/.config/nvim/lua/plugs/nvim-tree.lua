@@ -11,7 +11,7 @@ require("nvim-tree").setup({
   disable_netrw = false,
   respect_buf_cwd = true,
   hijack_netrw = true,
-  open_on_tab = false,
+  open_on_tab = true,
   hijack_cursor = false,
   update_cwd = false,
   hijack_directories = {
@@ -71,15 +71,4 @@ require("nvim-tree").setup({
     cmd = "trash",
     require_confirm = true,
   },
-})
-
-local autocmd = vim.api.nvim_create_autocmd
-autocmd({ "BufEnter" }, {
-  pattern = { "*" },
-  nested = true,
-  callback = function()
-    if vim.fn.winnr("$") == 1 and vim.fn.bufname() == "NvimTree_" .. vim.fn.tabpagenr() then
-      vim.api.nvim_command(":silent qa!")
-    end
-  end,
 })
