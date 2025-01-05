@@ -72,6 +72,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions direnv sudo man tmux fzf-tab extract colored-man-pages systemd docker docker-compose zsh-fzf-history-search)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+=/usr/share/vagrant/gems/gems/vagrant-2.3.4/contrib/zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -99,18 +100,18 @@ export ARCHFLAGS="-arch x86_64"
 #
 alias zrc="nvim ~/.zshrc"
 alias cat="bat"
+alias ls="lsd"
 alias luamake="/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake"
 
 # Misc auto-appends
 export FLYCTL_INSTALL="/home/aklsh/.fly"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-if [ -e "$HOME/.shellfishrc" ]; then source "$HOME/.shellfishrc"; fi
 
 # Source local configs
 source $HOME/.zshrc.local
