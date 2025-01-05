@@ -1,3 +1,0 @@
-#!/bin/sh
-
-java -classpath "/opt/ElectricVLSI/electricBinary-9.07.jar:/opt/ElectricVLSI/electricSFS-9.07.jar:/usr/share/java/j3dcore.jar:/usr/share/java/j3dutils.jar:/usr/share/java/vecmath.jar" com.sun.electric.Launcher

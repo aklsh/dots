@@ -50,35 +50,27 @@
 # ---------------------------------------------------
 
 [core]
-    pager = delta
     excludesfile = ~/.gitignore
-    editor = nvim
+    editor = zed
 
 # ---------------------------------------------------
 
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    navigate = true  # use n and N to move between diff sections
-    side-by-side = true
-    line-numbers-left-format = ""
-    line-numbers-right-format = "│ "
-    minus-style = syntax "#a0252b"
-    plus-style = syntax "#3b6e43"
 [diff]
-    colorMoved = default
+	tool = opendiff
+[difftool]
+    prompt = false
 
 # ---------------------------------------------------
 
 [merge]
-	tool = nvimdiff
-[mergetool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
+	tool = opendiff
+[mergetool]
+    prompt = false
 
 # ---------------------------------------------------
 
 [web]
-    browser = /usr/bin/firefox
+    browser = /Applications/Safari.app/Contents/MacOS/Safari
 
 # ---------------------------------------------------
 
@@ -97,7 +89,7 @@
 # ---------------------------------------------------
 
 [gpg]
-    program = /usr/bin/gpg
+	program = /opt/homebrew/bin/gpg
 
 # ---------------------------------------------------
 

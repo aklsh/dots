@@ -1,3 +1,0 @@
-#!/bin/sh
-
-watch -n1 -x awk '{print $1*10^-6}' /sys/class/power_supply/BAT0/power_now

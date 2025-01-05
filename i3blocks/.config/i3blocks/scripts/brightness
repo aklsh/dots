@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# Script that shows the brightness level on the status bar
-BRI=$(($(cat /sys/class/backlight/amdgpu_bl*/brightness) * 100 / $(cat /sys/class/backlight/amdgpu_bl*/max_brightness) ))
-
-# echo "  $BRI% "
-echo "  $BRI% "
-# echo "  $BRI% "

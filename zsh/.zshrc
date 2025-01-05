@@ -1,24 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
-export PATH=/usr/bin/vendor_perl:$PATH
-export PATH=/usr/local/go/bin:$PATH
-export PATH=/usr/local/cuda-11/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.codon/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-
+export PATH=/opt/homebrew/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/aklsh/.oh-my-zsh
-export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/firefox
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export CARGO_HOME=~/.local
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export ZSH=$HOME/.oh-my-zsh
 
+export EDITOR=zed
+export CARGO_HOME=$HOME/.local
 export STARSHIP_CACHE=~/.starship/cache
 
 # Uncomment the following line to use case-sensitive completion.
@@ -76,6 +70,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export GPG_TTY=$(tty)
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -83,34 +78,36 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
+  export EDITOR='zed'
 else
-  export EDITOR='nvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
 export MAKEFLAGS="-j13 --warn-undefined-variables"
-export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch aarch64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-alias zrc="nvim ~/.zshrc"
+alias zrc="zed ~/.zshrc"
 alias cat="bat"
-alias luamake="/home/aklsh/Sources/lua-language-server/3rd/luamake/luamake"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias ls='lsd'
 
 # Misc auto-appends
 export FLYCTL_INSTALL="/home/aklsh/.fly"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
 eval "$(starship init zsh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source <(fzf --zsh)
+
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-if [ -e "$HOME/.shellfishrc" ]; then source "$HOME/.shellfishrc"; fi
 
 # Source local configs
 source $HOME/.zshrc.local

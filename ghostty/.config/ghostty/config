@@ -1,0 +1,14 @@
+theme = light:xcodelighthc,dark:xcodedarkhc
+font-family = "Hack Nerd Font Propo"
+auto-update = download
+bold-is-bright = true
+shell-integration = zsh
+shell-integration-features = true
+macos-titlebar-style = native
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+enter=new_window
+macos-titlebar-proxy-icon = hidden
+quick-terminal-screen = mouse
+clipboard-paste-protection = true
+focus-follows-mouse = true
