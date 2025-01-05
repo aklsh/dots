@@ -1,0 +1,12 @@
+theme = light:Adwaita,dark:"Adwaita Dark"
+font-family = "Hack Nerd Font Mono"
+auto-update = download
+bold-is-bright = true
+shell-integration = zsh
+shell-integration-features = true
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+enter=new_window
+quick-terminal-screen = mouse
+clipboard-paste-protection = true
+focus-follows-mouse = true
