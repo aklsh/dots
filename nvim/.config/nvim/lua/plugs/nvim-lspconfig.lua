@@ -1,4 +1,4 @@
-local nvim_lsp = require("lspconfig")
+require("lspconfig").sourcekit.setup({})
 
 local M = {}
 

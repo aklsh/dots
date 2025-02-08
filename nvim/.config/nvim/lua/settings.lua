@@ -44,10 +44,10 @@ glb.fillchars = "stl: " -- current window statusline fill character
 buf.undofile = true -- as many undo levels as possible
 buf.undolevels = 1000
 glb.undoreload = 10000
-glb.undodir = "/home/aklsh/.vim/undodir"
+glb.undodir = "/Users/akileshkannan/.vim/undodir"
 
 glb.background = "dark" -- dark theme
-cmd.colorscheme("adwaita") -- ultimate awesomeness
+cmd.colorscheme("xcodedarkhc") -- ultimate awesomeness
 
 -- Remove whitespace on save
 autocmd("BufWritePre", {
@@ -72,7 +72,7 @@ autocmd("TextYankPost", {
 })
 
 -- unknown filetypes = text
-autocmd({"BufNewFile", "BufEnter"}, {
+autocmd({ "BufNewFile", "BufEnter" }, {
   pattern = "*",
   command = "if &filetype == '' | setlocal ft=text | endif",
 })
@@ -91,8 +91,9 @@ glb.wildignore = [[
 ]]
 
 g.loaded_ruby_provider = 1
-g.loaded_perl_provider = 1
+g.ruby_host_prog = '/Users/akileshkannan/.rbenv/versions/3.3.1/bin/neovim-ruby-host'
 g.loaded_python_provider = 1
+g.python3_host_prog = "/Users/akileshkannan/.pyenv/versions/vim-env/bin/python"
 
 g.loaded_gzip = 1
 g.loaded_zip = 1
@@ -115,3 +116,4 @@ g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 g.loaded_netrwSettings = 1
 g.loaded_netrwFileHandlers = 1
+g.loaded_perl_provider = 0

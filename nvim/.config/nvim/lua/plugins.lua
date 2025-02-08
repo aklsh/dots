@@ -53,7 +53,6 @@ return require("packer").startup(function(use)
   use("tpope/vim-commentary")
   use("google/vim-searchindex")
   use("windwp/nvim-autopairs")
-  use("lewis6991/impatient.nvim")
   use("direnv/direnv.vim")
 
   -- LSP plugs
@@ -61,8 +60,7 @@ return require("packer").startup(function(use)
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use({ "j-hui/fidget.nvim", tag = "legacy" })
-  -- use("hrsh7th/nvim-compe") -- TODO: Change to nvim-cmp
-  use("hrsh7th/nvim-cmp") -- TODO: Change to nvim-cmp
+  use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
@@ -80,7 +78,6 @@ return require("packer").startup(function(use)
   use("editorconfig/editorconfig-vim")
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use({ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" })
-  use("simrat39/rust-tools.nvim")
 
   -- Navigation
   use("nvim-tree/nvim-tree.lua")
@@ -109,6 +106,8 @@ return require("packer").startup(function(use)
   -- Themes
   use("Mofiqul/adwaita.nvim")
   use("tjdevries/colorbuddy.nvim")
+  use("lunacookies/vim-colors-xcode")
+  use("norcalli/nvim-colorizer.lua")
 
   use("esensar/nvim-dev-container")
 

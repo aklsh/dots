@@ -3,7 +3,7 @@ export PATH=$HOME/.local/bin:$HOME/.local/custom:/usr/local/bin:$PATH
 export PATH=$HOME/.pyenv/bin:$PATH
 export PATH=$HOME/.fly/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.local/go/bin:$PATH
 export PATH=$HOME/.codon/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
@@ -14,6 +14,8 @@ export ZSH=$HOME/.oh-my-zsh
 export EDITOR=zed
 export CARGO_HOME=$HOME/.local
 export STARSHIP_CACHE=~/.starship/cache
+export NVM_DIR="$HOME/.nvm"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,7 +103,9 @@ alias ls='lsd'
 export FLYCTL_INSTALL="/home/aklsh/.fly"
 eval "$(direnv hook zsh)"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 eval "$(starship init zsh)"
+eval "$(rbenv init - --no-rehash zsh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source <(fzf --zsh)
 
@@ -111,3 +115,9 @@ source <(fzf --zsh)
 
 # Source local configs
 source $HOME/.zshrc.local
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

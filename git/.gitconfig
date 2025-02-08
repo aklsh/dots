@@ -50,12 +50,21 @@
 # ---------------------------------------------------
 
 [core]
+    pager = delta
     excludesfile = ~/.gitignore
-    editor = zed
+    editor = zed -n -w
 
 # ---------------------------------------------------
 
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers-left-format = ""
+    line-numbers-right-format = "│ "
 [diff]
+    colorMoved = default
 	tool = opendiff
 [difftool]
     prompt = false

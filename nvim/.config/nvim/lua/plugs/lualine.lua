@@ -1,6 +1,6 @@
 require("lualine").setup({
   options = {
-    theme = "adwaita",
+    theme = 'auto',
     component_separators = "",
     section_separators = "",
     disabled_filetypes = { "NvimTree" },

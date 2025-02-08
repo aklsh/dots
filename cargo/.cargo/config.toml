@@ -1,8 +1,5 @@
-[build]
-jobs = 13                      # number of parallel jobs, defaults to # of CPUs
-
 [install]
-root = "/home/aklsh/.local"    # `cargo install` destination directory
+root = "/Users/akileshkannan/.local"    # `cargo install` destination directory
 
 [cargo-new]
 vcs = "git"                    # VCS to use ('git', 'hg', 'pijul', 'fossil', 'none')

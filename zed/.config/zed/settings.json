@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "when_closing_with_no_tabs": "close_window",
   "buffer_font_family": "Hack Nerd Font Mono",
   "ui_font_family": ".SystemUIFont",
   "show_inline_completions": false,
@@ -15,16 +16,16 @@
     "inline_completion_provider": "supermaven"
   },
   "assistant": {
+    "version": "2",
     "default_model": {
       "provider": "ollama",
       "model": "llama3.2:latest"
-    },
-    "version": "2"
+    }
   },
   "theme": {
     "mode": "system",
     "light": "Xcode High Contrast Light",
-    "dark": "Xcode High Contrast Dark"
+    "dark": "Xcode High Contrast Darker"
   },
   "project_panel": {
     "dock": "right"
