@@ -9,10 +9,10 @@
 {
   "buffer_font_family": "Hack Nerd Font Mono",
   "ui_font_family": ".SystemUIFont",
-  "show_inline_completions": false,
+  "show_edit_predictions": false,
   "show_completions_on_input": false,
   "features": {
-    "inline_completion_provider": "supermaven"
+    "edit_prediction_provider": "supermaven"
   },
   "theme": {
     "mode": "system",
@@ -29,7 +29,7 @@
     "file_icons": true,
     "git_status": true,
     "activate_on_close": "history",
-    "always_show_close_button": false
+    "show_close_button": "hover"
   },
   "vim_mode": true,
   "vim": {
