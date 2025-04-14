@@ -72,7 +72,7 @@ autocmd("TextYankPost", {
 })
 
 -- unknown filetypes = text
-autocmd({"BufNewFile", "BufEnter"}, {
+autocmd({ "BufNewFile", "BufEnter" }, {
   pattern = "*",
   command = "if &filetype == '' | setlocal ft=text | endif",
 })
