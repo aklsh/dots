@@ -32,9 +32,7 @@
     "show_close_button": "hover"
   },
   "vim_mode": true,
-  "vim": {
-    "relative_line_numbers": true
-  },
+  "relative_line_numbers": true,
   "terminal": {
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
@@ -50,7 +48,9 @@
     "font_family": "Hack Nerd Font Propo",
     "font_features": null,
     "font_size": null,
-    "line_height": "standard",
+    "line_height": {
+      "custom": 1.2
+    },
     "option_as_meta": false,
     "button": true,
     "shell": { "program": "/usr/bin/zsh" },
