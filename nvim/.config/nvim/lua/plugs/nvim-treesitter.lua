@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "c", "cpp", "python", "latex", "verilog", "lua", "rust", "html", "css", "go" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = { "c", "cpp", "python", "latex", "verilog", "lua", "html", "css" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   autotag = {
     enable = true,
   },

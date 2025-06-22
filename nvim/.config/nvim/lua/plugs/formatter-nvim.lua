@@ -9,29 +9,38 @@ require("formatter").setup({
   log_level = vim.log.levels.WARN,
   -- All formatter configurations are opt-in
   filetype = {
-    -- Formatter configurations for filetype "lua" go here
-    -- and will be executed in order
+    c = {
+      require("formatter.filetypes.c").clangformat,
+    },
+    cpp = {
+      require("formatter.filetypes.cpp").clangformat,
+    },
+    css = {
+      require("formatter.filetypes.css").prettierd,
+    },
+    html = {
+      require("formatter.filetypes.html").prettierd,
+    },
     lua = {
-      -- "formatter.filetypes.lua" defines default configurations for the
-      -- "lua" filetype
       require("formatter.filetypes.lua").stylua,
-
-      -- You can also define your own configuration
+    },
+    python = {
+      require("formatter.filetypes.python").black,
+    },
+    systemverilog = {
       function()
-        -- Full specification of configurations is down below and in Vim help
-        -- files
+        -- Full specification of configurations is down below and in Vim help files
         return {
-          exe = "stylua",
+          exe = "verible-verilog-format",
           args = {
-            "--search-parent-directories",
-            "--stdin-filepath",
-            util.escape_path(util.get_current_buffer_file_path()),
-            "--",
-            "-",
+            "--inplace",
           },
-          stdin = true,
+          stdin = false,
         }
       end,
+    },
+    ["*"] = {
+      require("formatter.filetypes.any").remove_trailing_whitespace,
     },
   },
 })

@@ -58,12 +58,12 @@ return require("packer").startup(function(use)
 
   -- LSP plugs
   use("neovim/nvim-lspconfig")
-  use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
+  use("mason-org/mason.nvim")
+  use("mason-org/mason-lspconfig.nvim")
   use({ "j-hui/fidget.nvim", tag = "legacy" })
-  -- use("hrsh7th/nvim-compe") -- TODO: Change to nvim-cmp
-  use("hrsh7th/nvim-cmp") -- TODO: Change to nvim-cmp
+  use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-nvim-lua")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
@@ -80,7 +80,6 @@ return require("packer").startup(function(use)
   use("editorconfig/editorconfig-vim")
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use({ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" })
-  use("simrat39/rust-tools.nvim")
 
   -- Navigation
   use("nvim-tree/nvim-tree.lua")
@@ -109,8 +108,6 @@ return require("packer").startup(function(use)
   -- Themes
   use("Mofiqul/adwaita.nvim")
   use("tjdevries/colorbuddy.nvim")
-
-  use("esensar/nvim-dev-container")
 
   if is_bootstrap then
     require("packer").sync()
